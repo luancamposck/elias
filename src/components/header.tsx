@@ -9,6 +9,61 @@ import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { cn } from "@/lib/utils"
 
+const items = [
+  {
+    id: 0,
+    name: "Home",
+    href: "/"
+  },
+  {
+    id: 1,
+    name: "Propostas",
+    href: "#",
+    sublinks: [
+      {
+        id: 0,
+        name: "Saúde",
+        href: "/propostas/saude"
+      },
+      {
+        id: 1,
+        name: "Transporte",
+        href: "/propostas/transporte"
+      },
+      {
+        id: 2,
+        name: "Servidores",
+        href: "/propostas/servidores"
+      },
+      {
+        id: 3,
+        name: "Segurança",
+        href: "/propostas/seguranca"
+      },
+      {
+        id: 4,
+        name: "Assistência Social",
+        href: "/propostas/assistencia-social"
+      }
+    ]
+  },
+  {
+    id: 2,
+    name: "Músicas",
+    href: "/musicas"
+  },
+  {
+    id: 3,
+    name: "Desburocratize",
+    href: "/desburocratize"
+  },
+  {
+    id: 4,
+    name: "Denuncie",
+    href: "/denuncie"
+  }
+]
+
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
   const [isMenuVisible, setIsMenuVisible] = useState<boolean>(false)
@@ -24,61 +79,6 @@ export const Header = () => {
     }
     return () => clearTimeout(timeoutId)
   }, [isMenuOpen])
-
-  const items = [
-    {
-      id: 0,
-      name: "Home",
-      href: "/home"
-    },
-    {
-      id: 1,
-      name: "Propostas",
-      href: "#",
-      sublinks: [
-        {
-          id: 0,
-          name: "Saúde",
-          href: "/propostas/saude"
-        },
-        {
-          id: 1,
-          name: "Transporte",
-          href: "/propostas/transporte"
-        },
-        {
-          id: 2,
-          name: "Servidores",
-          href: "/propostas/servidores"
-        },
-        {
-          id: 3,
-          name: "Segurança",
-          href: "/propostas/seguranca"
-        },
-        {
-          id: 4,
-          name: "Assistência Social",
-          href: "/propostas/assistencia-social"
-        }
-      ]
-    },
-    {
-      id: 2,
-      name: "Músicas",
-      href: "/musicas"
-    },
-    {
-      id: 3,
-      name: "Desburocratize",
-      href: "/desburocratize"
-    },
-    {
-      id: 4,
-      name: "Denuncie",
-      href: "/denuncie"
-    }
-  ]
 
   function handleToggleMenu() {
     setIsMenuOpen((prev) => !prev)
