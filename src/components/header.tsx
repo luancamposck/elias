@@ -4,9 +4,10 @@ import { Menu, X } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
+
+import { Button } from "@/components/ui/button"
+import { Separator } from "@/components/ui/separator"
 import { cn } from "@/lib/utils"
-import { Button } from "./ui/button"
-import { Separator } from "./ui/separator"
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
@@ -28,7 +29,7 @@ export const Header = () => {
     {
       id: 0,
       name: "Home",
-      href: "/home",
+      href: "/home"
     },
     {
       id: 1,
@@ -38,45 +39,45 @@ export const Header = () => {
         {
           id: 0,
           name: "Saúde",
-          href: "/propostas/saude",
+          href: "/propostas/saude"
         },
         {
           id: 1,
           name: "Transporte",
-          href: "/propostas/transporte",
+          href: "/propostas/transporte"
         },
         {
           id: 2,
           name: "Servidores",
-          href: "/propostas/servidores",
+          href: "/propostas/servidores"
         },
         {
           id: 3,
           name: "Segurança",
-          href: "/propostas/seguranca",
+          href: "/propostas/seguranca"
         },
         {
           id: 4,
           name: "Assistência Social",
-          href: "/propostas/assistencia-social",
-        },
-      ],
+          href: "/propostas/assistencia-social"
+        }
+      ]
     },
     {
       id: 2,
       name: "Músicas",
-      href: "/musicas",
+      href: "/musicas"
     },
     {
       id: 3,
       name: "Desburocratize",
-      href: "/desburocratize",
+      href: "/desburocratize"
     },
     {
       id: 4,
       name: "Denuncie",
-      href: "/denuncie",
-    },
+      href: "/denuncie"
+    }
   ]
 
   function handleToggleMenu() {
@@ -99,7 +100,7 @@ export const Header = () => {
             isMenuOpen
               ? "animate-in slide-in-from-top-4"
               : "animate-out slide-out-to-top-4",
-            "duration-300",
+            "duration-300"
           )}>
           <Separator />
 
