@@ -15,7 +15,7 @@ const participateLinks = [
   { href: "#", label: "Seja um voluntário" },
   { href: "/Desburocratize", label: "Desburocratize" },
   { href: "/Denuncie", label: "Denuncie" },
-  { href: "/Home", label: "Fale conosco" }
+  { href: "/", label: "Fale conosco" }
 ]
 
 const socialLinks = [
