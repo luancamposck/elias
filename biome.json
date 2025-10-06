@@ -40,7 +40,7 @@
     "formatter": {
       "semicolons": "asNeeded",
       "quoteProperties": "asNeeded",
-      "trailingCommas": "es5"
+      "trailingCommas": "none"
     }
   }
 }
