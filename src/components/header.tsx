@@ -36,7 +36,7 @@ export const Header = () => {
   }
 
   return (
-    <nav className="bg-white lg:flex lg:items-center lg:justify-between px-2 lg:px-4">
+    <nav className="bg-white lg:flex lg:items-center lg:justify-between px-2 lg:px-4 lg:container lg:mx-auto">
       <div className="flex justify-between items-center p-6">
         <Image src="/logo.png" width={150} height={150} alt="size-auto" />
 
