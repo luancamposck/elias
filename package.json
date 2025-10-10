@@ -6,9 +6,11 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "fix:biome": "biome check --write src"
+    "fix:biome": "biome check --write src",
+    "shadcn:add": "npx shadcn@latest add"
   },
   "dependencies": {
+    "@radix-ui/react-hover-card": "^1.1.15",
     "@radix-ui/react-separator": "^1.1.7",
     "@radix-ui/react-slot": "^1.2.3",
     "class-variance-authority": "^0.7.1",
