@@ -1,68 +1,19 @@
 "use client"
 
-import { Menu, X } from "lucide-react"
+import { ChevronDown, Menu, X } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 
 import { Button } from "@/components/ui/button"
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger
+} from "@/components/ui/hover-card"
 import { Separator } from "@/components/ui/separator"
+import { HEADER_LINKS } from "@/lib/constants"
 import { cn } from "@/lib/utils"
-
-const items = [
-  {
-    id: 0,
-    name: "Home",
-    href: "/"
-  },
-  {
-    id: 1,
-    name: "Propostas",
-    href: "#",
-    sublinks: [
-      {
-        id: 0,
-        name: "Saúde",
-        href: "/propostas/saude"
-      },
-      {
-        id: 1,
-        name: "Transporte",
-        href: "/propostas/transporte"
-      },
-      {
-        id: 2,
-        name: "Servidores",
-        href: "/propostas/servidores"
-      },
-      {
-        id: 3,
-        name: "Segurança",
-        href: "/propostas/seguranca"
-      },
-      {
-        id: 4,
-        name: "Assistência Social",
-        href: "/propostas/assistencia-social"
-      }
-    ]
-  },
-  {
-    id: 2,
-    name: "Músicas",
-    href: "/musicas"
-  },
-  {
-    id: 3,
-    name: "Desburocratize",
-    href: "/desburocratize"
-  },
-  {
-    id: 4,
-    name: "Denuncie",
-    href: "/denuncie"
-  }
-]
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
@@ -85,11 +36,15 @@ export const Header = () => {
   }
 
   return (
-    <nav className=" sticky top-0 z-20 bg-white">
-      <div className="flex justify-between items-center p-3">
-        <Image src="/logo.png" width={96} height={96} alt="" />
+    <nav className="bg-white lg:flex lg:items-center lg:justify-between px-2 lg:px-4">
+      <div className="flex justify-between items-center p-6">
+        <Image src="/logo.png" width={150} height={150} alt="size-auto" />
 
-        <Button variant="ghost" size="icon" onClick={handleToggleMenu}>
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={handleToggleMenu}
+          className="lg:hidden">
           {isMenuOpen ? <X className="size-7" /> : <Menu className="size-7" />}
         </Button>
       </div>
@@ -100,26 +55,26 @@ export const Header = () => {
             isMenuOpen
               ? "animate-in slide-in-from-top-4"
               : "animate-out slide-out-to-top-4",
-            "duration-300"
+            "duration-300 lg:hidden"
           )}>
           <Separator />
 
           <ul className="flex flex-col gap-1 p-4">
-            {items.map((item) => (
+            {HEADER_LINKS.map((item) => (
               <li key={item.id} className="flex flex-col">
-                {item.sublinks ? (
+                {item.proposals ? (
                   <>
                     <span className="text-orange-600 font-medium py-2 px-3">
                       {item.name}
                     </span>
                     <ul className="pl-4 border-l-orange-200 border-l-2">
-                      {item.sublinks.map((sublink) => {
+                      {item.proposals.map((sublink) => {
                         return (
                           <li key={sublink.id} className="py-2 px-3">
                             <Link
                               href={sublink.href}
                               className="text-gray-800 font-medium">
-                              {sublink.name}
+                              {sublink.title}
                             </Link>
                           </li>
                         )
@@ -135,29 +90,6 @@ export const Header = () => {
                 )}
               </li>
             ))}
-
-            {/* {items.map((item) => {
-                if (item.sublinks) {
-                  return (
-                    <li>
-                      <p className="text-orange-200 font-semibold">
-                        {item.name}
-                      </p>
-                      <ul>
-                        {item.sublinks.map((sublink) => {
-                          return (
-                            <li>
-                              <a href={sublink.href}>{sublink.name}</a>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </li>
-                  );
-                } else {
-                  return <li>{item.name}</li>;
-                }
-              })} */}
           </ul>
 
           <Separator />
@@ -169,6 +101,50 @@ export const Header = () => {
           </div>
         </div>
       )}
+
+      <div className="hidden lg:flex">
+        {HEADER_LINKS.map((item) =>
+          item.proposals ? (
+            <HoverCard key={item.id}>
+              <HoverCardTrigger asChild>
+                <Button
+                  variant="ghost"
+                  className="group data-[state=open]:bg-muted">
+                  {item.name}
+                  <ChevronDown className="ml-1 transition-transform duration-300 group-hover:rotate-180 group-data-[state=open]:rotate-180" />
+                </Button>
+              </HoverCardTrigger>
+
+              <HoverCardContent className="w-120 grid grid-cols-2 grid-rows-3 gap-3">
+                {item.proposals.map(({ icon: Icon, ...proposal }) => (
+                  <Link
+                    href={proposal.href}
+                    key={proposal.id}
+                    className="flex p-2 rounded-lg hover:cursor-pointer hover:bg-orange-500/10 focus:bg-orange-500/10 transition-colors duration-300 group">
+                    <Icon className="size-12 text-orange-500" />
+                    <div className="ml-4">
+                      <h3 className="font-medium group-hover:text-orange-500 transition-colors duration-300">
+                        {proposal.title.split(" ")[0]}
+                      </h3>
+                      <p className="text-muted-foreground">
+                        {proposal.description}
+                      </p>
+                    </div>
+                  </Link>
+                ))}
+              </HoverCardContent>
+            </HoverCard>
+          ) : (
+            <Button key={item.id} variant="ghost" asChild>
+              <Link href={item.href}>{item.name}</Link>
+            </Button>
+          )
+        )}
+      </div>
+
+      <Button className="hidden lg:flex bg-yellow-500 hover:bg-yellow-400 text-black hover:text-black font-bold h-10">
+        Seja um voluntário
+      </Button>
     </nav>
   )
 }
