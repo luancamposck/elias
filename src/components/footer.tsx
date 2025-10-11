@@ -40,7 +40,7 @@ export const Footer = () => (
             alt="Medeiros Logo"
             width={112}
             height={112}
-            className="h-28 w-auto mb-4"
+            className="mb-4"
           />
           <p className="text-gray-300">Eu por ti, nós por Brasília.</p>
           <div className="flex gap-4 mt-4">
