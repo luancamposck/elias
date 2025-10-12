@@ -1,13 +1,16 @@
 import Image from "next/image"
+
 import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 
 interface CTAFooterProps {
   message: string
+  className?: string
 }
 
-export default function CTAFooter({ message }: CTAFooterProps) {
+export default function CTAFooter({ message, className }: CTAFooterProps) {
   return (
-    <div className="bg-blue-900 text-white p-8 rounded-lg">
+    <div className={cn("bg-blue-900 text-white p-8 rounded-lg", className)}>
       <div className="mx-auto w-[150px] h-[50px] relative">
         <Image
           src="/white-logo.png"
