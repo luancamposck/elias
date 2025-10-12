@@ -3,18 +3,14 @@ import Link from "next/link"
 
 import { FacebookIcon, InstagramIcon, XIcon, YoutubeIcon } from "@/assets/icons"
 import { Button } from "@/components/ui/button"
+import { PROPOSALS } from "@/lib/constants"
 
-const proposalLinks = [
-  { href: "/Saude", label: "Saúde Pública" },
-  { href: "/Transporte", label: "Transporte" },
-  { href: "/Servidores", label: "Servidores" },
-  { href: "/Seguranca", label: "Segurança" }
-]
+const proposalLinks = PROPOSALS
 
 const participateLinks = [
   { href: "#", label: "Seja um voluntário" },
-  { href: "/Desburocratize", label: "Desburocratize" },
-  { href: "/Denuncie", label: "Denuncie" },
+  { href: "/streamline", label: "Desburocratize" },
+  { href: "/report", label: "Denuncie" },
   { href: "/", label: "Fale conosco" }
 ]
 
@@ -67,7 +63,7 @@ export const Footer = () => (
                 <Link
                   href={link.href}
                   className="text-gray-300 hover:text-orange-500 transition-colors">
-                  {link.label}
+                  {link.title}
                 </Link>
               </li>
             ))}

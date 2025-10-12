@@ -14,16 +14,11 @@ const HEADER_LINKS = [
   },
   {
     id: 2,
-    name: "Músicas",
-    href: "/musicas"
+    name: "Desburocratize",
+    href: "/streamline"
   },
   {
     id: 3,
-    name: "Desburocratize",
-    href: "/desburocratize"
-  },
-  {
-    id: 4,
     name: "Denuncie",
     href: "/denuncie"
   }
