@@ -1,20 +1,11 @@
-import {
-  Bus,
-  Clock,
-  Gavel,
-  Heart,
-  Shield,
-  TramFront,
-  TrendingUp,
-  UserCheck
-} from "lucide-react"
+import { Gavel, Shield, TrendingUp, UserCheck } from "lucide-react"
 
 import {
-  ProposalHeader,
-  StatsSection,
-  ProposalsGrid,
+  CTAFooter,
   DetailSection,
-  CTAFooter
+  ProposalHeader,
+  ProposalsGrid,
+  StatsSection
 } from "@/components/proposal-page"
 
 const leftProposals: string[] = [

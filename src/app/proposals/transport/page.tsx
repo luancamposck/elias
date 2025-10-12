@@ -1,11 +1,11 @@
 import { Bus, Clock, Heart, TramFront, TrendingUp } from "lucide-react"
 
 import {
-  ProposalHeader,
-  StatsSection,
-  ProposalsGrid,
+  CTAFooter,
   DetailSection,
-  CTAFooter
+  ProposalHeader,
+  ProposalsGrid,
+  StatsSection
 } from "@/components/proposal-page"
 
 const leftProposals: string[] = [

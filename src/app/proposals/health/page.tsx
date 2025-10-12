@@ -1,11 +1,11 @@
 import { Clock, Heart, MapPin, TrendingUp, Users } from "lucide-react"
 
 import {
-  ProposalHeader,
-  StatsSection,
-  ProposalsGrid,
+  CTAFooter,
   DetailSection,
-  CTAFooter
+  ProposalHeader,
+  ProposalsGrid,
+  StatsSection
 } from "@/components/proposal-page"
 
 const leftProposals: string[] = [

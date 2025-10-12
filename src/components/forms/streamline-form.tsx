@@ -1,9 +1,9 @@
 "use client"
 
 import { zodResolver } from "@hookform/resolvers/zod"
+import { Send, Trash2 } from "lucide-react"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
-import { Trash2, Send } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import {
