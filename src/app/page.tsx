@@ -1,41 +1,10 @@
-import { ArrowRight, Bus, HandHeart, Heart, Shield, Users } from "lucide-react"
+import { ArrowRight, Heart, Users } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
+import { CTAFooter } from "@/components/proposal-page"
 import { Button } from "@/components/ui/button"
-
-const proposals = [
-  {
-    href: "/Saude",
-    icon: Heart,
-    title: "Saúde Pública",
-    description: "Redução de filas, mais hospitais e postos de saúde"
-  },
-  {
-    href: "/Transporte",
-    icon: Bus,
-    title: "Transporte e Infraestrutura",
-    description: "Expansão do metrô, ciclovias e transporte eficiente"
-  },
-  {
-    href: "/Servidores",
-    icon: Users,
-    title: "Servidores e Serviço Público",
-    description: "Valorização, capacitação e modernização"
-  },
-  {
-    href: "/Seguranca",
-    icon: Shield,
-    title: "Segurança Pública",
-    description: "Endurecimento de penas e combate ao crime"
-  },
-  {
-    href: "/Assistencia",
-    icon: HandHeart,
-    title: "Assistência Social",
-    description: "Programas de renda e combate à pobreza"
-  }
-]
+import { PROPOSALS } from "@/lib/constants"
 
 const Home = () => {
   return (
@@ -151,7 +120,7 @@ const Home = () => {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {proposals.map(({ icon: Icon, ...proposal }) => {
+            {PROPOSALS.map(({ icon: Icon, ...proposal }) => {
               return (
                 <Link key={proposal.href} href={proposal.href}>
                   <div className="rounded-lg border text-card-foreground bg-white shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-l-4 border-orange-500 h-full">
@@ -177,26 +146,10 @@ const Home = () => {
       </section>
 
       {/* Section Call to Action */}
-      <section className="py-16 sm:py-20 bg-blue-900">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-white">
-            Só me diga sim! Apenas diga sim.
-          </h2>
-          <p className="text-lg sm:text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
-            Juntos podemos transformar Brasília. Sua participação faz a
-            diferença.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="h-10 bg-orange-500 text-white hover:bg-orange-600 font-bold text-lg px-8 py-4">
-              Seja Voluntário
-            </Button>
-
-            <Button className="border bg-background h-10 border-yellow-400 text-blue-900 hover:bg-yellow-400 hover:text-black font-bold text-lg px-8 py-4">
-              Receba Novidades
-            </Button>
-          </div>
-        </div>
-      </section>
+      <CTAFooter
+        className="mb-16 sm:mb-20 max-w-2xl mx-auto"
+        message="Juntos podemos transformar Brasília. Sua participação faz a diferença."
+      />
     </>
   )
 }
