@@ -1,6 +1,6 @@
-import { DesburocratizeForm } from "@/components/forms/desburocratize-form"
+import { StreamlineForm } from "@/components/forms/streamline-form"
 
-const DebureaucratizePage = () => (
+const StreamlinePage = () => (
   <div className="container mx-auto px-4 mt-8 space-y-10">
     <div className="max-w-4xl mx-auto text-center">
       <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 text-yellow-400 tracking-tight">
@@ -48,7 +48,7 @@ const DebureaucratizePage = () => (
 
     <div className="rounded-lg shadow-sm bg-blue-950 border border-yellow-500/30 text-white mb-12">
       <div className="p-6 text-blue-100 space-y-4">
-        <DesburocratizeForm />
+        <StreamlineForm />
       </div>
     </div>
 
@@ -61,4 +61,4 @@ const DebureaucratizePage = () => (
   </div>
 )
 
-export default DebureaucratizePage
+export default StreamlinePage
