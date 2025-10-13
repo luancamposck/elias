@@ -20,7 +20,7 @@ const HEADER_LINKS = [
   {
     id: 3,
     name: "Denuncie",
-    href: "/denuncie"
+    href: "/report"
   }
 ]
 
