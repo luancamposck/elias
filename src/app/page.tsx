@@ -1,155 +1,324 @@
-import { ArrowRight, Heart, Users } from "lucide-react"
+import {
+  ArrowRight,
+  BadgeCheck,
+  Banknote,
+  Building2,
+  ClipboardCheck,
+  FileSearch2,
+  ShieldCheck
+} from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
-import { CTAFooter } from "@/components/proposal-page"
 import { Button } from "@/components/ui/button"
 import { PROPOSALS } from "@/lib/constants"
+
+const CONTEXT_POINTS = [
+  "Decisões federais pouco visíveis afetam o dia a dia do DF.",
+  "Detalhes ignorados mudam custo, prazo e impacto real.",
+  "Menos ruído político e mais foco em funcionamento."
+]
+
+const ROLE_POINTS = [
+  "Representar é responder pelo impacto de cada decisão.",
+  "Deputado federal não executa obra: legisla, fiscaliza e corrige rumo.",
+  "Compromisso: prioridade clara, debate responsável e entrega correta."
+]
+
+const ACTION_POINTS = [
+  {
+    icon: Banknote,
+    title: "Orçamento onde faz diferença",
+    description:
+      "Recursos federais direcionados para prioridades que chegam na ponta."
+  },
+  {
+    icon: FileSearch2,
+    title: "Fiscalização por resultado",
+    description:
+      "Acompanhamento público para cobrar execução, prazo e qualidade."
+  },
+  {
+    icon: ClipboardCheck,
+    title: "Leis para melhorar execução",
+    description: "Regras que reduzem travas e aumentam previsibilidade."
+  },
+  {
+    icon: Building2,
+    title: "Articulação com impacto amplo",
+    description:
+      "Coordenação institucional para soluções que alcancem todo o DF."
+  }
+]
+
+const PROPOSAL_FLOWS: Record<
+  string,
+  {
+    contexto: string
+    detalhe: string
+    consequencia: string
+    encaminhamento: string
+  }
+> = {
+  health: {
+    contexto: "A saúde do DF depende de decisões federais de repasse e gestão.",
+    detalhe: "Recursos previstos atrasam ou chegam sem foco de execução.",
+    consequencia: "Filas maiores e atendimento mais instável.",
+    encaminhamento:
+      "Vincular repasse a meta de entrega e fiscalização contínua."
+  },
+  transport: {
+    contexto: "Mobilidade exige coordenação entre orçamento, obra e operação.",
+    detalhe: "Projetos travam por priorização ruim e cronograma frágil.",
+    consequencia: "Mais tempo perdido e custo maior para quem trabalha.",
+    encaminhamento:
+      "Planejamento com etapas públicas, metas e cobrança por resultado."
+  },
+  security: {
+    contexto: "Segurança pública depende de integração federativa real.",
+    detalhe: "A legislação não acompanha o ritmo das novas dinâmicas do crime.",
+    consequencia: "Forças sobrecarregadas e prevenção menos eficiente.",
+    encaminhamento:
+      "Atualizar normas com foco operacional e monitoramento permanente."
+  },
+  "public-service": {
+    contexto: "Serviço público forte começa em boas condições de trabalho.",
+    detalhe: "Processos burocráticos e estruturas frágeis atrasam entregas.",
+    consequencia: "Cidadão espera mais e recebe menos previsibilidade.",
+    encaminhamento:
+      "Ajustar regras e gestão para serviço contínuo e mensurável."
+  },
+  assistance: {
+    contexto: "Assistência social precisa chegar rápido a quem tem urgência.",
+    detalhe: "Programas existem, mas execução e integração ainda falham.",
+    consequencia: "Famílias ficam sem proteção no momento crítico.",
+    encaminhamento:
+      "Conectar cadastro, repasse e acompanhamento com transparência."
+  }
+}
+
+const CONFIDENCE_POINTS = [
+  "Menos discurso, mais previsibilidade de ação.",
+  "Coerência ao longo do tempo, sem mudar de tom conforme o vento.",
+  "Debate firme, sem radicalização desnecessária.",
+  "Método claro para acompanhar cada encaminhamento."
+]
 
 const Home = () => {
   return (
     <>
-      {/* Hero Banner */}
-      <section className="relative min-h-screen flex items-center text-white">
-        {/* Imagem de fundo */}
+      <section className="relative flex min-h-[calc(100vh-96px)] items-center text-white">
         <Image
           src="/main-banner.jpg"
-          alt="Banner Elias Medeiros"
+          alt="Brasilia ao amanhecer"
           fill
           className="object-cover"
           priority
         />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/65 to-black/50" />
 
-        {/* Overlay escuro */}
-        <div className="bg-black/70 absolute inset-0 z-0"></div>
-
-        {/* Conteúdo */}
-        <div className="container mx-auto px-4 py-20 relative z-10">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-4 text-white drop-shadow-lg">
-                Quem é Elias Medeiros
-              </h1>
-              <p className="text-xl sm:text-2xl md:text-3xl text-yellow-400 mb-8 font-bold drop-shadow-md">
-                Eu por ti, nós por Brasília
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Button className="h-10 bg-transparent border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black font-bold text-lg sm:text-xl px-8 py-4 sm:px-12 sm:py-6 shadow-lg">
-                  Saiba Mais
-                </Button>
-              </div>
-            </div>
+        <div className="container relative z-10 mx-auto px-4 py-16 sm:py-24">
+          <div className="max-w-3xl space-y-6">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-yellow-300 sm:text-base">
+              DF precisa de menos ruído e mais funcionamento
+            </p>
+            <h1 className="text-4xl font-extrabold leading-tight sm:text-5xl md:text-6xl">
+              O que trava em Brasília e como corrigir com critério
+            </h1>
+            <p className="max-w-2xl text-base text-gray-100 sm:text-lg md:text-xl">
+              Decisões federais afetam o DF todos os dias. O foco aqui é
+              explicar impacto, responsabilidade e encaminhamento.
+            </p>
+            <Button
+              asChild
+              size="lg"
+              className="h-11 bg-orange-500 px-8 text-base font-semibold text-white hover:bg-orange-600">
+              <Link href="#acompanhar">
+                Acompanhe e entenda
+                <ArrowRight className="size-5" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
-      {/* Section "Sou através de você" */}
-      <section className="py-20 lg:py-32 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-50 pointer-events-none">
-          <div className="absolute top-20 left-10 size-32 bg-orange-500 rounded-full blur-3xl" />
-          <div className="absolute bottom-20 right-10 size-40 bg-blue-500 rounded-full blur-3xl" />
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 size-64 bg-yellow-400 rounded-full blur-3xl" />
-        </div>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="mb-12">
-              <div className="transition-all duration-1000 transform opacity-100 translate-y-0">
-                <span className="text-6xl md:text-8xl lg:text-9xl font-extrabold text-gray-900 block leading-tight">
-                  Sou
-                </span>
-              </div>
-              <div className="flex justify-center my-8 transition-all duration-1000 delay-300 opacity-100 scale-100">
-                <div className="relative">
-                  <div className="w-24 h-1 bg-gradient-to-r from-orange-500 via-yellow-400 to-blue-500 rounded-full" />
-                  <Heart className="absolute -top-2 left-1/2 transform -translate-x-1/2 size-5 text-red-500 animate-pulse" />
-                </div>
-              </div>
-              <div className="transition-all duration-1000 delay-600 transform opacity-100 translate-y-0">
-                <span className="text-4xl md:text-6xl lg:text-7xl font-light text-gray-700 italic block leading-tight">
-                  através de{" "}
-                  <span className="relative inline-block group cursor-pointer">
-                    <span className="text-orange-500 font-semibold relative z-10 transition-all duration-300 group-hover:text-orange-600">
-                      você
-                    </span>
-                    <span className="absolute inset-0 bg-yellow-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left opacity-20 rounded"></span>
-                    <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-yellow-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 rounded"></span>
-                  </span>
-                </span>
-              </div>
-            </div>
-
-            <div className="transition-all duration-1000 delay-1000 transform opacity-100 translate-y-0">
-              <p className="text-lg md:text-xl text-gray-600 font-medium max-w-2xl mx-auto leading-relaxed">
-                Porque representar é existir através de quem confia em mim.
-              </p>
-            </div>
-
-            <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-8 transition-all duration-1000 delay-1200 transform opacity-100 translate-y-0">
-              <div className="flex items-center gap-3 text-gray-700 group cursor-pointer hover:text-orange-500 transition-colors duration-300">
-                <Users className="size-6 group-hover:scale-110 transition-transform duration-300" />
-                <span className="font-medium">Sua voz</span>
-                <ArrowRight className="size-5 group-hover:translate-x-1 transition-transform duration-300" />
-              </div>
-              <div className="w-8 h-8 rounded-full bg-gradient-to-r from-orange-500 to-yellow-400 flex items-center justify-center animate-pulse">
-                <div className="size-3 rounded-full bg-white"></div>
-              </div>
-              <div className="flex items-center gap-3 text-gray-700 group cursor-pointer hover:text-blue-500 transition-colors duration-300">
-                <span className="font-medium">Minha representação</span>
-                <Heart className="size-6 group-hover:scale-110 transition-transform duration-300 text-red-500" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 size-2 bg-orange-400 rounded-full animate-ping opacity-40" />
-          <div className="absolute top-3/4 right-1/4 size-3 bg-blue-400 rounded-full animate-ping opacity-40 animation-delay-1000" />
-          <div className="absolute top-1/2 right-1/3 size-2 bg-yellow-400 rounded-full animate-ping opacity-40 animation-delay-2000" />
-        </div>
-      </section>
-
-      {/* Section Propostas */}
-      <section className="py-16 sm:py-20 bg-white">
+      <section className="bg-white py-16 sm:py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4 text-gray-900">
-            Minhas Propostas para Brasília
-          </h2>
-          <p className="text-lg sm:text-xl text-center text-gray-600 mb-12 sm:mb-16 max-w-3xl mx-auto">
-            Como deputado federal, vou trabalhar para trazer recursos e
-            fiscalizar investimentos em áreas essenciais
-          </p>
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-orange-600 sm:text-base">
+              Contexto
+            </p>
+            <h2 className="mt-3 text-3xl font-bold text-gray-900 sm:text-4xl">
+              Antes de prometer, explicar o que está acontecendo
+            </h2>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {PROPOSALS.map(({ icon: Icon, ...proposal }) => {
-              return (
-                <Link key={proposal.href} href={proposal.href}>
-                  <div className="rounded-lg border text-card-foreground bg-white shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-l-4 border-orange-500 h-full">
-                    <div className="p-6 sm:p-8">
-                      <Icon className="size-12 sm:size-16 text-orange-500 mb-6" />
-                      <h3 className="text-xl sm:text-2xl font-bold mb-4 text-gray-900">
-                        {proposal.title}
-                      </h3>
-                      <p className="text-base sm:text-lg text-gray-700 mb-6">
-                        {proposal.description}
-                      </p>
-                      <div className="flex items-center text-orange-500 font-semibold">
-                        Ver propostas
-                        <ArrowRight className="size-5 ml-2" />
-                      </div>
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            {CONTEXT_POINTS.map((point) => (
+              <div
+                key={point}
+                className="rounded-xl border border-gray-200 bg-gray-50 p-6 text-base text-gray-700 shadow-sm sm:text-lg">
+                {point}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-gray-50 py-16 sm:py-20">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-5xl rounded-2xl border border-gray-200 bg-white p-7 shadow-sm sm:p-10">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-orange-600 sm:text-base">
+              Posicionamento
+            </p>
+            <h2 className="mt-3 text-3xl font-bold text-gray-900 sm:text-4xl">
+              Representar é responder pelo impacto
+            </h2>
+            <div className="mt-8 space-y-4">
+              {ROLE_POINTS.map((point) => (
+                <div key={point} className="flex items-start gap-3">
+                  <BadgeCheck className="mt-0.5 size-5 shrink-0 text-orange-500" />
+                  <p className="text-base text-gray-700 sm:text-lg">{point}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-16 sm:py-20">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-orange-600 sm:text-base">
+              Como atua como deputado federal
+            </p>
+            <h2 className="mt-3 text-3xl font-bold text-gray-900 sm:text-4xl">
+              Sem promessa vazia, com método e acompanhamento
+            </h2>
+          </div>
+
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
+            {ACTION_POINTS.map(({ icon: Icon, title, description }) => (
+              <article
+                key={title}
+                className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+                <Icon className="size-8 text-orange-500" />
+                <h3 className="mt-4 text-xl font-bold text-gray-900">
+                  {title}
+                </h3>
+                <p className="mt-3 text-base text-gray-700">{description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-gray-50 py-16 sm:py-20">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-5xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-orange-600 sm:text-base">
+              Problemas e propostas
+            </p>
+            <h2 className="mt-3 text-3xl font-bold text-gray-900 sm:text-4xl">
+              Cada área segue a mesma regra de responsabilidade
+            </h2>
+            <div className="mt-6 inline-flex items-center rounded-full border border-orange-200 bg-orange-50 px-4 py-2 text-sm font-semibold text-orange-700">
+              Contexto → Detalhe → Consequência → Encaminhamento
+            </div>
+          </div>
+
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {PROPOSALS.map(({ icon: Icon, ...proposal }) => (
+              <Link key={proposal.href} href={proposal.href}>
+                <div className="rounded-lg border border-gray-200 bg-white hover:shadow-lg transition-shadow duration-300 h-full flex flex-col">
+                  <div className="p-6">
+                    <Icon className="size-10 text-orange-500 mb-4" />
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      {proposal.title}
+                    </h3>
+                    <p className="text-gray-600 mb-6 leading-relaxed">
+                      {proposal.description}
+                    </p>
+                    <div className="flex items-center text-orange-500 font-medium mt-auto">
+                      Ver detalhes
+                      <ArrowRight className="size-4 ml-2" />
                     </div>
                   </div>
-                </Link>
-              )
-            })}
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Section Call to Action */}
-      <CTAFooter
-        className="mb-16 sm:mb-20 max-w-2xl mx-auto"
-        message="Juntos podemos transformar Brasília. Sua participação faz a diferença."
-      />
+      <section className="bg-white py-16 sm:py-20">
+        <div className="container mx-auto px-4">
+          <div className="rounded-2xl border border-gray-200 bg-gray-50 p-7 sm:p-10">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-orange-600 sm:text-base">
+              Confiança
+            </p>
+            <h2 className="mt-3 text-3xl font-bold text-gray-900 sm:text-4xl">
+              Consistência para longo prazo
+            </h2>
+            <div className="mt-8 grid gap-4 md:grid-cols-2">
+              {CONFIDENCE_POINTS.map((point) => (
+                <div key={point} className="flex items-start gap-3">
+                  <ShieldCheck className="mt-0.5 size-5 shrink-0 text-orange-500" />
+                  <p className="text-base text-gray-700 sm:text-lg">{point}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="acompanhar" className="bg-white pb-16 sm:pb-20">
+        <div className="container mx-auto px-4">
+          <div className="rounded-2xl bg-blue-900 p-7 text-white shadow-lg sm:p-10">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-yellow-300 sm:text-base">
+              Acompanhar é o primeiro passo
+            </p>
+            <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
+              Receba explicações sobre decisões federais que impactam o DF
+            </h2>
+            <p className="mt-4 max-w-3xl text-base text-blue-100 sm:text-lg">
+              Conteúdo objetivo para entender o que muda na sua rotina e como
+              acompanhar cada encaminhamento.
+            </p>
+
+            <form className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <label htmlFor="email" className="sr-only">
+                Seu e-mail
+              </label>
+              <input
+                id="email"
+                type="email"
+                placeholder="Seu e-mail"
+                className="h-11 w-full rounded-md border border-blue-700 bg-blue-950/60 px-3 text-base text-white placeholder:text-blue-200 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              />
+              <Button
+                type="submit"
+                className="h-11 bg-orange-500 px-8 text-base font-semibold text-white hover:bg-orange-600">
+                Acompanhar
+              </Button>
+            </form>
+          </div>
+
+          <div className="mt-8 flex flex-col items-center justify-center gap-4 text-center">
+            <p className="text-base text-gray-600 sm:text-lg">
+              Se quiser participar de forma mais direta, o próximo passo é
+              voluntário.
+            </p>
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="h-11 border-orange-500 text-orange-600 hover:bg-orange-50 hover:text-orange-700">
+              <Link href="/streamline">Seja voluntário</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
     </>
   )
 }

@@ -38,7 +38,7 @@ export const Footer = () => (
             height={112}
             className="mb-4"
           />
-          <p className="text-gray-300">Eu por ti, nós por Brasília.</p>
+          <p className="text-gray-300">DF precisa de menos ruído e mais funcionamento.</p>
           <div className="flex gap-4 mt-4">
             {socialLinks.map(({ icon: Icon, ...social }) => {
               return (
