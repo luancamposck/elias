@@ -4,7 +4,13 @@ import { cn } from "@/lib/utils"
 interface ProposalsGridProps {
   leftProposals: string[]
   rightProposals: string[]
-  variant: "health" | "transport" | "public-service" | "security" | "assistance"
+  variant:
+    | "health"
+    | "transport"
+    | "public-service"
+    | "security"
+    | "assistance"
+    | "education"
 }
 
 const variantColors = {
@@ -12,7 +18,8 @@ const variantColors = {
   transport: "text-blue-500",
   "public-service": "text-green-500",
   security: "text-yellow-600",
-  assistance: "text-purple-500"
+  assistance: "text-purple-500",
+  education: "text-amber-600"
 }
 
 export default function ProposalsGrid({

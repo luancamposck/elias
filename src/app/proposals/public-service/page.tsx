@@ -63,13 +63,13 @@ const stats = [
   }
 ]
 
-const TransportProposalPage = () => {
+const PublicServiceProposalPage = () => {
   return (
     <div>
       <ProposalHeader
         icon={Users}
         title="Serviço Público"
-        subtitle="Valorização do servidor, eficiência e um serviço público de qualidade para o cidadão."
+        subtitle="Valorizar o servidor é exigir eficiência."
         variant="public-service"
       />
 
@@ -113,7 +113,7 @@ const TransportProposalPage = () => {
               />
             </div>
 
-            <CTAFooter message="Juntos podemos transformar a saúde pública de Brasília" />
+            <CTAFooter message="Juntos podemos construir um serviço público mais eficiente." />
           </div>
         </div>
       </div>
@@ -121,4 +121,4 @@ const TransportProposalPage = () => {
   )
 }
 
-export default TransportProposalPage
+export default PublicServiceProposalPage

@@ -84,17 +84,21 @@ const HealthProposalPage = () => {
       <ProposalHeader
         icon={Heart}
         title="Saúde Pública"
-        subtitle="Redução de filas, mais hospitais e postos de saúde para todos os brasilienses"
+        subtitle="Saúde não é discurso. É atendimento funcionando."
         variant="health"
       />
 
-      <StatsSection title="A Realidade da Saúde no DF" stats={stats} />
+      <StatsSection
+        title="Diagnóstico: A Realidade da Saúde no DF"
+        stats={stats}
+      />
 
       <div className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
+            {/* AÇÃO */}
             <h2 className="text-3xl font-bold mb-8 text-gray-900">
-              Minhas Propostas Resumidas
+              Ação: O que será feito
             </h2>
 
             <ProposalsGrid
@@ -103,39 +107,30 @@ const HealthProposalPage = () => {
               variant="health"
             />
 
-            <h2 className="text-3xl font-bold mb-8 text-gray-900">
-              Como Vou Atuar Como Deputado Federal
-            </h2>
-
-            <div className="prose prose-lg max-w-none text-gray-700 mb-12">
+            <div className="prose prose-lg max-w-none text-gray-700 mt-12 mb-12">
               <p className="text-xl leading-relaxed mb-6">
                 Como deputado federal, terei poder direto para fiscalizar e
                 garantir que os recursos federais destinados à saúde do Distrito
                 Federal sejam aplicados corretamente e de forma eficiente.
               </p>
-
               <DetailSection
                 title="Financiamento Federal"
                 description="O DF recebe anualmente R$ 2,8 bilhões em recursos federais para a saúde. Vou propor emendas parlamentares para aumentar esse valor em 30%, priorizando:"
                 items={financingItems}
               />
-
               <DetailSection
                 title="Propostas de Lei"
                 description="Vou apresentar projetos de lei para agilizar o atendimento e reduzir as filas:"
                 items={legislativeProposals}
               />
+            </div>
 
-              <DetailSection
-                title="Fiscalização e Controle"
-                description="Utilizarei meu mandato para fiscalizar rigorosamente:"
-                items={oversightItems}
-              />
-
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                Metas Concretas
-              </h3>
-              <div className="bg-orange-50 p-6 rounded-lg mb-8">
+            {/* META */}
+            <h2 className="text-3xl font-bold mb-8 text-gray-900">
+              Meta: Resultados Concretos
+            </h2>
+            <div className="prose prose-lg max-w-none text-gray-700 mb-12">
+              <div className="bg-orange-50 p-6 rounded-lg">
                 <h4 className="font-semibold text-lg mb-4">
                   Até o final do mandato:
                 </h4>
@@ -145,6 +140,21 @@ const HealthProposalPage = () => {
                   ))}
                 </ul>
               </div>
+            </div>
+
+            {/* FISCALIZAÇÃO */}
+            <h2 className="text-3xl font-bold mb-8 text-gray-900">
+              Fiscalização: Controle e Transparência
+            </h2>
+            <div className="prose prose-lg max-w-none text-gray-700 mb-12">
+              <p className="mb-6">
+                Utilizarei meu mandato para fiscalizar rigorosamente:
+              </p>
+              <ul className="list-disc list-inside mb-6 space-y-2">
+                {oversightItems.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
             </div>
 
             <CTAFooter message="Juntos podemos transformar a saúde pública de Brasília" />

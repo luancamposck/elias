@@ -29,11 +29,11 @@ const financingItems: string[] = [
   "Financiamento para restaurantes comunitários"
 ]
 
-const partnershipItems: string[] = [
-  "Contratação de mais policiais para o DF",
-  "Compra de viaturas, armamento e equipamentos modernos",
-  "Implementação de sistemas de vigilância com câmeras e inteligência artificial",
-  "Programas de treinamento e capacitação para as polícias"
+const legislativeItems: string[] = [
+  "Lei de Incentivo à Contratação de Jovens em vulnerabilidade",
+  "Projeto de qualificação profissional para beneficiários de programas sociais",
+  "Marco regulatório para parcerias com o terceiro setor na assistência",
+  "Simplificação do acesso a programas de microcrédito para empreendedores de baixa renda"
 ]
 
 const stats = [
@@ -63,13 +63,13 @@ const stats = [
   }
 ]
 
-const TransportProposalPage = () => {
+const AssistanceProposalPage = () => {
   return (
     <div>
       <ProposalHeader
         icon={HandHeart}
         title="Assistência Social"
-        subtitle="Combate à pobreza e programas de renda para uma vida digna"
+        subtitle="Assistência social deve libertar, não aprisionar."
         variant="assistance"
       />
 
@@ -109,7 +109,7 @@ const TransportProposalPage = () => {
               <DetailSection
                 title="Legislação e Projetos de Lei"
                 description="Apresentarei projetos para criar um ambiente de mais oportunidades:"
-                items={partnershipItems}
+                items={legislativeItems}
               />
 
               <DetailSection
@@ -119,7 +119,7 @@ const TransportProposalPage = () => {
               />
             </div>
 
-            <CTAFooter message="Juntos podemos transformar a saúde pública de Brasília" />
+            <CTAFooter message="Juntos podemos construir um DF mais justo para todos." />
           </div>
         </div>
       </div>
@@ -127,4 +127,4 @@ const TransportProposalPage = () => {
   )
 }
 
-export default TransportProposalPage
+export default AssistanceProposalPage

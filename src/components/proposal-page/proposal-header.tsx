@@ -5,7 +5,13 @@ interface ProposalHeaderProps {
   icon: LucideIcon
   title: string
   subtitle: string
-  variant: "health" | "transport" | "public-service" | "security" | "assistance"
+  variant:
+    | "health"
+    | "transport"
+    | "public-service"
+    | "security"
+    | "assistance"
+    | "education"
 }
 
 const variantStyles = {
@@ -13,7 +19,8 @@ const variantStyles = {
   transport: "from-blue-600 to-blue-800",
   "public-service": "from-green-600 to-green-800",
   security: "from-gray-700 to-gray-900",
-  assistance: "from-purple-600 to-purple-800"
+  assistance: "from-purple-600 to-purple-800",
+  education: "from-amber-600 to-amber-800"
 }
 
 const ProposalHeader = ({

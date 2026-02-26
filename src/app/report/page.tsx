@@ -8,8 +8,8 @@ const DebureaucratizePage = () => (
       <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 text-red-400 tracking-tight">
         <span className="bg-blue-950 px-3 rounded-lg">Denuncie</span>
       </h1>
-      <p className="text-lg sm:text-xl text-blue-950 underline decoration-3 decoration-yellow-400">
-        Ajude a fiscalizar o uso do dinheiro público federal.
+      <p className="text-lg sm:text-xl text-blue-950 font-semibold">
+        O dinheiro é seu. Fiscalizar é dever.
       </p>
     </div>
 
@@ -18,7 +18,7 @@ const DebureaucratizePage = () => (
         <div className="p-6 text-blue-100 space-y-4">
           <h3 className="font-bold text-lg text-white flex items-center gap-2">
             <TriangleAlert className="size-8 text-red-400" />
-            Uso ilegal de recursos federais na sua região? DENUNCIE!
+            Se tem dinheiro público sendo usado de forma ilegal, não se cale.
           </h3>
 
           <p>

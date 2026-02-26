@@ -16,13 +16,21 @@ const participateLinks = [
 
 const socialLinks = [
   {
-    href: "#",
+    href: "https://www.facebook.com/EliasMedeirosTV",
     icon: FacebookIcon,
     label: "Facebook"
   },
-  { href: "#", icon: XIcon, label: "Twitter" },
-  { href: "#", icon: InstagramIcon, label: "Instagram" },
-  { href: "#", icon: YoutubeIcon, label: "YouTube" }
+  { href: "https://x.com/eliasmedeiros", icon: XIcon, label: "Twitter" },
+  {
+    href: "https://www.instagram.com/eliasmedeiros/",
+    icon: InstagramIcon,
+    label: "Instagram"
+  },
+  {
+    href: "https://www.youtube.com/@eliasmedeiros",
+    icon: YoutubeIcon,
+    label: "YouTube"
+  }
 ]
 
 export const Footer = () => (
@@ -38,7 +46,7 @@ export const Footer = () => (
             height={112}
             className="mb-4"
           />
-          <p className="text-gray-300">DF precisa de menos ruído e mais funcionamento.</p>
+          <p className="text-gray-300">Eu por ti, nós por Brasília.</p>
           <div className="flex gap-4 mt-4">
             {socialLinks.map(({ icon: Icon, ...social }) => {
               return (
@@ -105,7 +113,7 @@ export const Footer = () => (
 
       {/* Copyright */}
       <div className="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400 text-sm">
-        <p>© 2025 Elias Medeiros. Todos os direitos reservados.</p>
+        <p>© 2026 Elias Medeiros. Todos os direitos reservados.</p>
       </div>
     </div>
   </footer>

@@ -4,36 +4,32 @@ import {
   CTAFooter,
   DetailSection,
   ProposalHeader,
-  ProposalsGrid,
   StatsSection
 } from "@/components/proposal-page"
 
-const leftProposals: string[] = [
-  "Endurecimento de penas para crimes graves",
-  'Fim da "saidinha" para presos',
-  "Aumento do efetivo policial",
-  "Investimento em tecnologia e inteligência"
-]
-
-const rightProposals: string[] = [
-  "Reforma do Código Penal",
-  "Combate ao narcotráfico nas fronteiras",
-  "Valorização e treinamento das forças policiais",
-  "Integração entre polícias e inteligência"
-]
-
-const financingItems: string[] = [
+const tougherLawsItems: string[] = [
   "Fim da progressão de regime para crimes hediondos",
   "Aumento da pena mínima para roubo, furto e homicídio",
-  "Tipificação de crimes relacionados a facções como terrorismo",
-  "Revisão do Estatuto do Desarmamento para permitir que o cidadão de bem possa se defender"
+  'Fim da "saidinha" para presos de alta periculosidade',
+  "Tipificação de crimes relacionados a facções como terrorismo"
 ]
 
-const partnershipItems: string[] = [
-  "Contratação de mais policiais para o DF",
-  "Compra de viaturas, armamento e equipamentos modernos",
-  "Implementação de sistemas de vigilância com câmeras e inteligência artificial",
-  "Programas de treinamento e capacitação para as polícias"
+const policeIntegrationItems: string[] = [
+  "Criação de um banco de dados unificado entre as polícias",
+  "Operações conjuntas e permanentes em áreas de alta criminalidade",
+  "Fortalecimento do combate ao narcotráfico e lavagem de dinheiro"
+]
+
+const technologyItems: string[] = [
+  "Implementação de sistemas de reconhecimento facial em áreas estratégicas",
+  "Uso de drones e câmeras corporais para monitoramento e transparência",
+  "Investimento em softwares de análise de dados para prevenção de crimes"
+]
+
+const oversightItems: string[] = [
+  "Auditoria rigorosa dos contratos da segurança pública",
+  "Destinação de emendas para compra de equipamentos e treinamento",
+  "Transparência total nos gastos do Fundo Constitucional da Segurança"
 ]
 
 const stats = [
@@ -63,13 +59,13 @@ const stats = [
   }
 ]
 
-const TransportProposalPage = () => {
+const SecurityProposalPage = () => {
   return (
     <div>
       <ProposalHeader
         icon={Shield}
         title="Segurança Pública"
-        subtitle="Leis mais duras, valorização da polícia e combate ao crime organizado."
+        subtitle="Impunidade custa vidas."
         variant="security"
       />
 
@@ -78,42 +74,40 @@ const TransportProposalPage = () => {
       <div className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-gray-900">
-              Minhas Propostas Resumidas
-            </h2>
-
-            <ProposalsGrid
-              leftProposals={leftProposals}
-              rightProposals={rightProposals}
-              variant="security"
-            />
-
-            <h2 className="text-3xl font-bold mb-8 text-gray-900">
-              Como Vou Atuar Como Deputado Federal
-            </h2>
-
             <div className="prose prose-lg max-w-none text-gray-700 mb-12">
               <p className="text-xl leading-relaxed mb-6">
-                A segurança pública começa com leis federais fortes. Como
-                deputado, minha principal função será criar e aprovar leis mais
-                duras, que acabem com a impunidade e deem à polícia as
-                ferramentas necessárias para proteger o cidadão de bem.
+                A segurança pública começa com leis federais fortes. Minha
+                principal função será criar e aprovar leis mais duras, que
+                acabem com a impunidade e deem à polícia as ferramentas
+                necessárias para proteger o cidadão de bem.
               </p>
 
               <DetailSection
-                title="Projetos de Lei (Tolerância Zero)"
+                title="Leis Mais Duras: Fim da Impunidade"
                 description="Vou propor e lutar pela aprovação de leis que realmente punam os criminosos:"
-                items={financingItems}
+                items={tougherLawsItems}
               />
 
               <DetailSection
-                title="Recursos e Fiscalização"
-                description="O DF recebe bilhões do Fundo Constitucional para a segurança. Vou fiscalizar cada centavo e destinar emendas para:"
-                items={partnershipItems}
+                title="Integração e Inteligência Policial"
+                description="O crime não respeita fronteiras entre corporações. Defendo a unificação de dados e operações para uma resposta mais rápida e eficiente:"
+                items={policeIntegrationItems}
+              />
+
+              <DetailSection
+                title="Tecnologia a Serviço da Segurança"
+                description="Usar a tecnologia para multiplicar a capacidade de vigilância e resposta da polícia:"
+                items={technologyItems}
+              />
+
+              <DetailSection
+                title="Fiscalização do Fundo Constitucional"
+                description="O DF recebe bilhões para a segurança. Meu papel é garantir que cada centavo seja investido onde realmente importa: na proteção do cidadão."
+                items={oversightItems}
               />
             </div>
 
-            <CTAFooter message="Juntos podemos transformar a saúde pública de Brasília" />
+            <CTAFooter message="Juntos, vamos devolver a paz ao Distrito Federal." />
           </div>
         </div>
       </div>
@@ -121,4 +115,4 @@ const TransportProposalPage = () => {
   )
 }
 
-export default TransportProposalPage
+export default SecurityProposalPage

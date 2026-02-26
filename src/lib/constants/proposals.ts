@@ -1,4 +1,4 @@
-import { Bus, HandHeart, Heart, Shield, Users } from "lucide-react"
+import { BookOpen, Bus, HandHeart, Heart, Shield, Users } from "lucide-react"
 
 const PROPOSALS = [
   {
@@ -6,7 +6,15 @@ const PROPOSALS = [
     href: "/proposals/health",
     icon: Heart,
     title: "Saúde Pública",
-    description: "Recursos federais que não chegam e fiscalização que não acompanha"
+    description:
+      "Recursos federais que não chegam e fiscalização que não acompanha"
+  },
+  {
+    id: "education",
+    href: "/proposals/education",
+    icon: BookOpen,
+    title: "Educação",
+    description: "Base sólida para um futuro com mais oportunidades."
   },
   {
     id: "transport",
