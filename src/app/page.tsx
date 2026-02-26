@@ -3,7 +3,6 @@ import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 
-import placeholderImages from "@/app/lib/placeholder-images.json"
 import { Button } from "@/components/ui/button"
 import { PROPOSALS } from "@/lib/constants"
 
@@ -45,14 +44,13 @@ const PRIORITY_SUMMARIES: Record<string, string> = {
 }
 
 const Home = () => {
-  const { mainBanner } = placeholderImages
   return (
     <>
       <section className="relative flex min-h-[calc(100vh-96px)] items-center text-white">
         <Image
           src="/main-banner.jpg"
           alt=""
-          data-ai-hint={mainBanner.hint}
+          // data-ai-hint={mainBanner.hint}
           fill
           className="object-cover"
           priority
