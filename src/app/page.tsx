@@ -256,12 +256,12 @@ const Home = () => {
 
       <section id="participar" className="bg-white py-16 sm:py-20">
         <div className="container mx-auto px-4">
-          <div className="relative overflow-hidden rounded-2xl p-8 text-white shadow-lg sm:p-10 flex flex-col items-center">
+          <div className="relative overflow-hidden rounded-2xl p-8 text-white shadow-lg lg:p-40 flex flex-col items-center">
             <Image
               src="/roda-de-conversa.png"
               alt="Roda de conversa"
               fill
-              className="object-cover"
+              className="object-cover sm:object-fill"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/65 to-black/50" />
 
@@ -301,22 +301,32 @@ const Home = () => {
 
       <section className="bg-foreground/10 pb-28 pt-16 text-center sm:pb-32 sm:pt-20">
         <div className="container mx-auto px-4">
-          <div className="mx-auto max-w-4xl rounded-2xl border border-gray-200 bg-white p-8 shadow-sm sm:p-10">
-            <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
-              Boa política melhora tudo ao redor.
-            </h2>
-            <p className="mt-4 text-lg text-foreground/80 sm:text-xl">
-              Você participa. Eu represento.
-            </p>
-            <Button
-              asChild
-              size="lg"
-              className="mt-8 h-11 bg-primary px-8 text-base font-semibold text-white hover:bg-primary/90">
-              <Link href="/streamline">
-                Participar agora
-                <ArrowRight className="size-5" />
-              </Link>
-            </Button>
+          <div className="relative mx-auto max-w-4xl overflow-hidden rounded-2xl p-8 shadow-sm sm:p-10">
+            <Image
+              src="/people.jpeg"
+              alt="Encontro comunitário ao ar livre"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/65 to-black/50" />
+
+            <div className="relative z-10">
+              <h2 className="text-3xl font-bold text-white sm:text-4xl">
+                Boa política melhora tudo ao redor.
+              </h2>
+              <p className="mt-4 text-lg text-blue-100 sm:text-xl">
+                Você participa. Eu represento.
+              </p>
+              <Button
+                asChild
+                size="lg"
+                className="mt-8 h-11 bg-primary px-8 text-base font-semibold text-white hover:bg-primary/90">
+                <Link href="/streamline">
+                  Participar agora
+                  <ArrowRight className="size-5" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
