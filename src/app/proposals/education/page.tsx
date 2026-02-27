@@ -42,6 +42,21 @@ const legislativeItems: string[] = [
   "Simplificação do acesso a programas de bolsas de estudo"
 ]
 
+const oversightItems: string[] = [
+  "Aplicação dos recursos do FUNDEB no DF",
+  "Qualidade da infraestrutura escolar",
+  "Cumprimento das metas do Plano Nacional de Educação",
+  "Transparência nos contratos de merenda e transporte escolar"
+]
+
+const goalItems: string[] = [
+  "Aumentar em 25% o repasse do FUNDEB para o DF",
+  "Reformar e equipar 100 escolas da rede pública",
+  "Reduzir o déficit de professores em 50%",
+  "Implementar ensino técnico em 30 novas escolas",
+  "Alcançar o top 10 do ranking do IDEB"
+]
+
 const stats = [
   {
     icon: TrendingDown,
@@ -84,8 +99,9 @@ const EducationProposalPage = () => {
       <div className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
+            {/* AÇÃO */}
             <h2 className="text-3xl font-bold mb-8 text-gray-900">
-              Minhas Propostas Resumidas
+              Ação: O que será feito
             </h2>
 
             <ProposalsGrid
@@ -94,11 +110,7 @@ const EducationProposalPage = () => {
               variant="education"
             />
 
-            <h2 className="text-3xl font-bold mb-8 text-gray-900">
-              Como Vou Atuar Como Deputado Federal
-            </h2>
-
-            <div className="prose prose-lg max-w-none text-gray-700 mb-12">
+            <div className="prose prose-lg max-w-none text-gray-700 mt-12 mb-12">
               <p className="text-xl leading-relaxed mb-6">
                 Como deputado federal, minha missão é garantir que a educação no
                 Distrito Federal seja um pilar para a formação de cidadãos
@@ -117,12 +129,39 @@ const EducationProposalPage = () => {
                 description="Apresentarei projetos para modernizar a educação e focar no que realmente importa:"
                 items={legislativeItems}
               />
+            </div>
 
-              <DetailSection
-                title="Fiscalização Rigorosa"
-                description="É meu dever assegurar que os recursos da educação sejam usados com máxima eficiência. Vou fiscalizar a aplicação dos fundos, como o FUNDEB, e a qualidade do ensino para garantir que o dinheiro público se transforme em resultados reais para os alunos."
-                items={[]}
-              />
+            {/* META */}
+            <h2 className="text-3xl font-bold mb-8 text-gray-900">
+              Meta: Resultados Concretos
+            </h2>
+            <div className="prose prose-lg max-w-none text-gray-700 mb-12">
+              <div className="bg-amber-50 p-6 rounded-lg">
+                <h4 className="font-semibold text-lg mb-4">
+                  Até o final do mandato:
+                </h4>
+                <ul className="space-y-2">
+                  {goalItems.map((m) => (
+                    <li key={m}>✓ {m}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* FISCALIZAÇÃO */}
+            <h2 className="text-3xl font-bold mb-8 text-gray-900">
+              Fiscalização: Controle e Transparência
+            </h2>
+            <div className="prose prose-lg max-w-none text-gray-700 mb-12">
+              <p className="mb-6">
+                É meu dever assegurar que os recursos da educação sejam usados
+                com máxima eficiência. Vou fiscalizar rigorosamente:
+              </p>
+              <ul className="list-disc list-inside mb-6 space-y-2">
+                {oversightItems.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
             </div>
 
             <CTAFooter message="Juntos, podemos construir um futuro melhor através da educação." />

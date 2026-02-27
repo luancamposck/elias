@@ -4,32 +4,51 @@ import {
   CTAFooter,
   DetailSection,
   ProposalHeader,
+  ProposalsGrid,
   StatsSection
 } from "@/components/proposal-page"
 
-const tougherLawsItems: string[] = [
+const leftProposals: string[] = [
+  "Leis mais duras contra criminosos",
+  "Fim da progressão de regime para crimes hediondos",
+  "Integração das forças policiais",
+  "Combate ao narcotráfico e facções"
+]
+
+const rightProposals: string[] = [
+  "Tecnologia e vigilância inteligente",
+  "Câmeras corporais e drones",
+  "Fiscalização do Fundo Constitucional",
+  "Mais recursos para equipamentos e treinamento"
+]
+
+const financingItems: string[] = [
+  "Destinação de emendas para compra de viaturas e equipamentos modernos",
+  "Aumento dos recursos do Fundo Constitucional para a segurança do DF",
+  "Verbas para contratação e treinamento de novos policiais",
+  "Financiamento de sistemas de monitoramento e inteligência"
+]
+
+const legislativeItems: string[] = [
   "Fim da progressão de regime para crimes hediondos",
   "Aumento da pena mínima para roubo, furto e homicídio",
   'Fim da "saidinha" para presos de alta periculosidade',
   "Tipificação de crimes relacionados a facções como terrorismo"
 ]
 
-const policeIntegrationItems: string[] = [
-  "Criação de um banco de dados unificado entre as polícias",
-  "Operações conjuntas e permanentes em áreas de alta criminalidade",
-  "Fortalecimento do combate ao narcotráfico e lavagem de dinheiro"
-]
-
-const technologyItems: string[] = [
-  "Implementação de sistemas de reconhecimento facial em áreas estratégicas",
-  "Uso de drones e câmeras corporais para monitoramento e transparência",
-  "Investimento em softwares de análise de dados para prevenção de crimes"
-]
-
 const oversightItems: string[] = [
   "Auditoria rigorosa dos contratos da segurança pública",
-  "Destinação de emendas para compra de equipamentos e treinamento",
-  "Transparência total nos gastos do Fundo Constitucional da Segurança"
+  "Acompanhamento das operações conjuntas e seus resultados",
+  "Transparência total nos gastos do Fundo Constitucional da Segurança",
+  "Fiscalização da destinação de emendas para equipamentos e treinamento"
+]
+
+const goalItems: string[] = [
+  "Aprovação de leis que acabem com a progressão de regime para crimes hediondos",
+  "Criação do banco de dados unificado entre as polícias do DF",
+  "Implementação de câmeras corporais em 100% dos policiais em operação",
+  "Aumento de 30% nas emendas destinadas à segurança do DF",
+  "Redução de 20% nos índices de criminalidade violenta"
 ]
 
 const stats = [
@@ -74,37 +93,70 @@ const SecurityProposalPage = () => {
       <div className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="prose prose-lg max-w-none text-gray-700 mb-12">
+            {/* AÇÃO */}
+            <h2 className="text-3xl font-bold mb-8 text-gray-900">
+              Ação: O que será feito
+            </h2>
+
+            <ProposalsGrid
+              leftProposals={leftProposals}
+              rightProposals={rightProposals}
+              variant="security"
+            />
+
+            <div className="prose prose-lg max-w-none text-gray-700 mt-12 mb-12">
               <p className="text-xl leading-relaxed mb-6">
-                A segurança pública começa com leis federais fortes. Minha
-                principal função será criar e aprovar leis mais duras, que
-                acabem com a impunidade e deem à polícia as ferramentas
-                necessárias para proteger o cidadão de bem.
+                A segurança pública começa com leis federais fortes. Como
+                deputado federal, minha principal função será criar e aprovar
+                leis mais duras, que acabem com a impunidade e deem à polícia as
+                ferramentas necessárias para proteger o cidadão de bem.
               </p>
 
               <DetailSection
-                title="Leis Mais Duras: Fim da Impunidade"
+                title="Financiamento e Recursos"
+                description="Vou garantir que o DF receba os recursos necessários para equipar e fortalecer as forças de segurança:"
+                items={financingItems}
+              />
+
+              <DetailSection
+                title="Propostas de Lei"
                 description="Vou propor e lutar pela aprovação de leis que realmente punam os criminosos:"
-                items={tougherLawsItems}
+                items={legislativeItems}
               />
+            </div>
 
-              <DetailSection
-                title="Integração e Inteligência Policial"
-                description="O crime não respeita fronteiras entre corporações. Defendo a unificação de dados e operações para uma resposta mais rápida e eficiente:"
-                items={policeIntegrationItems}
-              />
+            {/* META */}
+            <h2 className="text-3xl font-bold mb-8 text-gray-900">
+              Meta: Resultados Concretos
+            </h2>
+            <div className="prose prose-lg max-w-none text-gray-700 mb-12">
+              <div className="bg-gray-100 p-6 rounded-lg">
+                <h4 className="font-semibold text-lg mb-4">
+                  Até o final do mandato:
+                </h4>
+                <ul className="space-y-2">
+                  {goalItems.map((m) => (
+                    <li key={m}>✓ {m}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
 
-              <DetailSection
-                title="Tecnologia a Serviço da Segurança"
-                description="Usar a tecnologia para multiplicar a capacidade de vigilância e resposta da polícia:"
-                items={technologyItems}
-              />
-
-              <DetailSection
-                title="Fiscalização do Fundo Constitucional"
-                description="O DF recebe bilhões para a segurança. Meu papel é garantir que cada centavo seja investido onde realmente importa: na proteção do cidadão."
-                items={oversightItems}
-              />
+            {/* FISCALIZAÇÃO */}
+            <h2 className="text-3xl font-bold mb-8 text-gray-900">
+              Fiscalização: Controle e Transparência
+            </h2>
+            <div className="prose prose-lg max-w-none text-gray-700 mb-12">
+              <p className="mb-6">
+                O DF recebe bilhões para a segurança. Meu papel é garantir que
+                cada centavo seja investido onde realmente importa: na proteção
+                do cidadão.
+              </p>
+              <ul className="list-disc list-inside mb-6 space-y-2">
+                {oversightItems.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
             </div>
 
             <CTAFooter message="Juntos, vamos devolver a paz ao Distrito Federal." />

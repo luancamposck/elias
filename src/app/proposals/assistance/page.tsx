@@ -36,6 +36,21 @@ const legislativeItems: string[] = [
   "Simplificação do acesso a programas de microcrédito para empreendedores de baixa renda"
 ]
 
+const oversightItems: string[] = [
+  "Aplicação dos recursos federais para assistência social",
+  "Efetividade dos programas de transferência de renda",
+  "Cumprimento de metas dos programas de qualificação profissional",
+  "Transparência nos contratos com organizações sociais"
+]
+
+const goalItems: string[] = [
+  "Ampliar em 30% o repasse federal para assistência social no DF",
+  "Criar 10 novos centros de qualificação profissional",
+  "Garantir segurança alimentar para 100 mil famílias em vulnerabilidade",
+  "Aprovar lei de incentivo à contratação de jovens em vulnerabilidade",
+  "Ampliar o acesso ao microcrédito para 50 mil empreendedores"
+]
+
 const stats = [
   {
     icon: Users,
@@ -78,8 +93,9 @@ const AssistanceProposalPage = () => {
       <div className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
+            {/* AÇÃO */}
             <h2 className="text-3xl font-bold mb-8 text-gray-900">
-              Minhas Propostas Resumidas
+              Ação: O que será feito
             </h2>
 
             <ProposalsGrid
@@ -88,11 +104,7 @@ const AssistanceProposalPage = () => {
               variant="assistance"
             />
 
-            <h2 className="text-3xl font-bold mb-8 text-gray-900">
-              Como Vou Atuar Como Deputado Federal
-            </h2>
-
-            <div className="prose prose-lg max-w-none text-gray-700 mb-12">
+            <div className="prose prose-lg max-w-none text-gray-700 mt-12 mb-12">
               <p className="text-xl leading-relaxed mb-6">
                 Como deputado federal, meu papel é garantir que o Distrito
                 Federal receba os recursos necessários e tenha leis que apoiem o
@@ -111,12 +123,39 @@ const AssistanceProposalPage = () => {
                 description="Apresentarei projetos para criar um ambiente de mais oportunidades:"
                 items={legislativeItems}
               />
+            </div>
 
-              <DetailSection
-                title="Fiscalização Rigorosa"
-                description="É meu dever garantir que cada centavo enviado pelo governo federal seja usado corretamente. Vou fiscalizar a aplicação dos recursos em programas sociais para evitar desvios e garantir que a ajuda chegue a quem realmente precisa."
-                items={[]}
-              />
+            {/* META */}
+            <h2 className="text-3xl font-bold mb-8 text-gray-900">
+              Meta: Resultados Concretos
+            </h2>
+            <div className="prose prose-lg max-w-none text-gray-700 mb-12">
+              <div className="bg-purple-50 p-6 rounded-lg">
+                <h4 className="font-semibold text-lg mb-4">
+                  Até o final do mandato:
+                </h4>
+                <ul className="space-y-2">
+                  {goalItems.map((m) => (
+                    <li key={m}>✓ {m}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* FISCALIZAÇÃO */}
+            <h2 className="text-3xl font-bold mb-8 text-gray-900">
+              Fiscalização: Controle e Transparência
+            </h2>
+            <div className="prose prose-lg max-w-none text-gray-700 mb-12">
+              <p className="mb-6">
+                É meu dever garantir que cada centavo enviado pelo governo
+                federal seja usado corretamente. Vou fiscalizar rigorosamente:
+              </p>
+              <ul className="list-disc list-inside mb-6 space-y-2">
+                {oversightItems.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
             </div>
 
             <CTAFooter message="Juntos podemos construir um DF mais justo para todos." />
