@@ -23,8 +23,10 @@ export default function CTAFooter({ message, className }: CTAFooterProps) {
       <p className="text-lg mt-2 mb-6 text-center">{message}</p>
 
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        <Button className="h-10 bg-primary text-white hover:bg-primary/90 font-bold px-8 py-3">
-          Apoie Esta Proposta
+        <Button asChild className="h-10 bg-primary text-white hover:bg-primary/90 font-bold px-8 py-3">
+          <a href="https://app.eliasmedeiros.bsb.br" target="_blank" rel="noopener noreferrer">
+            Apoie Esta Proposta
+          </a>
         </Button>
 
         <Button className="h-10 border bg-background border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold px-8 py-3">

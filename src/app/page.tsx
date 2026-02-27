@@ -112,10 +112,10 @@ const Home = () => (
                 size="lg"
                 className="h-12 bg-primary px-8 text-base font-semibold text-white shadow-[--shadow-glow] hover:bg-primary/90 hover:shadow-[--shadow-glow-strong]"
                 style={{ animation: "glow-pulse 3s ease-in-out infinite" }}>
-                <Link href="/streamline">
+                <a href="https://app.eliasmedeiros.bsb.br" target="_blank" rel="noopener noreferrer">
                   Eu participo
                   <ArrowRight className="size-5" />
-                </Link>
+                </a>
               </Button>
 
               <Button
@@ -325,10 +325,10 @@ const Home = () => (
                 size="lg"
                 className="mt-8 h-12 bg-primary px-8 text-base font-semibold text-white hover:bg-primary/90"
                 style={{ boxShadow: "var(--shadow-glow)" }}>
-                <Link href="#participar">
+                <a href="https://app.eliasmedeiros.bsb.br" target="_blank" rel="noopener noreferrer">
                   Participar agora
                   <ArrowRight className="size-5" />
-                </Link>
+                </a>
               </Button>
             </div>
           </Reveal>
@@ -439,21 +439,21 @@ const Home = () => (
                   asChild
                   className="h-11 bg-primary px-7 text-base font-semibold text-white hover:bg-primary/90"
                   style={{ boxShadow: "var(--shadow-glow)", animation: "glow-pulse 3s ease-in-out infinite" }}>
-                  <Link href="/streamline">Participar</Link>
+                  <a href="https://app.eliasmedeiros.bsb.br" target="_blank" rel="noopener noreferrer">Participar</a>
                 </Button>
 
                 <Button
                   asChild
                   variant="outline"
                   className="h-11 border-white/20 bg-white/[0.06] px-7 text-base font-semibold text-white backdrop-blur-sm hover:bg-white/15 hover:text-white">
-                  <Link href="/streamline">Enviar proposta</Link>
+                  <a href="https://app.eliasmedeiros.bsb.br" target="_blank" rel="noopener noreferrer">Enviar proposta</a>
                 </Button>
 
                 <Button
                   asChild
                   variant="outline"
                   className="h-11 border-white/20 bg-white/[0.06] px-7 text-base font-semibold text-white backdrop-blur-sm hover:bg-white/15 hover:text-white">
-                  <Link href="/report">Denunciar irregularidade</Link>
+                  <a href="https://app.eliasmedeiros.bsb.br" target="_blank" rel="noopener noreferrer">Denunciar irregularidade</a>
                 </Button>
               </div>
             </div>
@@ -487,10 +487,10 @@ const Home = () => (
                 size="lg"
                 className="mt-8 h-12 bg-primary px-8 text-base font-semibold text-white hover:bg-primary/90"
                 style={{ boxShadow: "var(--shadow-glow)" }}>
-                <Link href="/streamline">
+                <a href="https://app.eliasmedeiros.bsb.br" target="_blank" rel="noopener noreferrer">
                   Participar agora
                   <ArrowRight className="size-5" />
-                </Link>
+                </a>
               </Button>
             </div>
           </div>
@@ -499,8 +499,10 @@ const Home = () => (
     </section>
 
     {/* ── FAB Participar (CSS-only entrance) ──────────────── */}
-    <Link
-      href="/streamline"
+    <a
+      href="https://app.eliasmedeiros.bsb.br"
+      target="_blank"
+      rel="noopener noreferrer"
       aria-label="Participar agora"
       className="fixed bottom-5 right-4 z-50 inline-flex h-12 items-center justify-center rounded-full bg-primary px-5 text-sm font-semibold text-white hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 sm:bottom-6 sm:right-6 sm:h-11 sm:text-base"
       style={{
@@ -508,7 +510,7 @@ const Home = () => (
         animation: "fab-enter 0.5s cubic-bezier(0.22,1,0.36,1) 1.5s both"
       }}>
       Participar
-    </Link>
+    </a>
   </>
 )
 

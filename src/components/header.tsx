@@ -99,8 +99,10 @@ export const Header = () => {
           <Separator />
 
           <div className="p-4">
-            <Button className="w-full bg-primary hover:bg-primary/80 text-primary-foreground hover:text-primary-foreground font-bold h-10">
-              Seja um voluntário
+            <Button asChild className="w-full bg-primary hover:bg-primary/80 text-primary-foreground hover:text-primary-foreground font-bold h-10">
+              <a href="https://app.eliasmedeiros.bsb.br" target="_blank" rel="noopener noreferrer">
+                Seja um voluntário
+              </a>
             </Button>
           </div>
         </div>
@@ -146,8 +148,10 @@ export const Header = () => {
         )}
       </div>
 
-      <Button className="hidden lg:flex bg-primary hover:bg-primary/80 text-primary-foreground hover:text-primary-foreground font-bold h-10">
-        Seja um voluntário
+      <Button asChild className="hidden lg:flex bg-primary hover:bg-primary/80 text-primary-foreground hover:text-primary-foreground font-bold h-10">
+        <a href="https://app.eliasmedeiros.bsb.br" target="_blank" rel="noopener noreferrer">
+          Seja um voluntário
+        </a>
       </Button>
     </nav>
   )

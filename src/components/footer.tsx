@@ -8,7 +8,7 @@ import { PROPOSALS } from "@/lib/constants"
 const proposalLinks = PROPOSALS
 
 const participateLinks = [
-  { href: "#", label: "Seja um voluntário" },
+  { href: "https://app.eliasmedeiros.bsb.br", label: "Seja um voluntário" },
   { href: "/streamline", label: "Desburocratize" },
   { href: "/report", label: "Denuncie" },
   { href: "/", label: "Fale conosco" }
