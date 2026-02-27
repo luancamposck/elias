@@ -53,6 +53,8 @@ export const Footer = () => (
                 <Link
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-400 hover:text-primary transition-colors"
                   aria-label={social.label}>
                   <Icon className="size-6" />
