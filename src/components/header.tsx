@@ -75,6 +75,7 @@ export const Header = () => {
                           <li key={sublink.id} className="py-2 px-3">
                             <Link
                               href={sublink.href}
+                              onClick={() => setIsMenuOpen(false)}
                               className="text-gray-800 font-medium">
                               {sublink.title}
                             </Link>
@@ -86,6 +87,7 @@ export const Header = () => {
                 ) : (
                   <Link
                     href={item.href}
+                    onClick={() => setIsMenuOpen(false)}
                     className="text-gray-800 font-medium py-2 px-3">
                     {item.name}
                   </Link>
