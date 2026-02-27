@@ -256,34 +256,44 @@ const Home = () => {
 
       <section id="participar" className="bg-white py-16 sm:py-20">
         <div className="container mx-auto px-4">
-          <div className="rounded-2xl bg-foreground p-8 text-white shadow-lg sm:p-10 flex flex-col items-center">
-            <h2 className="text-3xl font-bold sm:text-4xl">
-              Brasília é de quem participa.
-            </h2>
-            <p className="mt-4 max-w-3xl text-base text-blue-100 sm:text-lg">
-              Mandato não é palco. É responsabilidade compartilhada.
-            </p>
+          <div className="relative overflow-hidden rounded-2xl p-8 text-white shadow-lg sm:p-10 flex flex-col items-center">
+            <Image
+              src="/roda-de-conversa.png"
+              alt="Roda de conversa"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/65 to-black/50" />
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Button
-                asChild
-                className="h-11 bg-primary px-7 text-base font-semibold text-white hover:bg-primary/90">
-                <Link href="/streamline">Participar</Link>
-              </Button>
+            <div className="relative z-10 flex flex-col items-center">
+              <h2 className="text-3xl font-bold sm:text-4xl">
+                Brasília é de quem participa.
+              </h2>
+              <p className="mt-4 max-w-3xl text-base text-blue-100 sm:text-lg">
+                Mandato não é palco. É responsabilidade compartilhada.
+              </p>
 
-              <Button
-                asChild
-                variant="outline"
-                className="h-11 border-blue-200/50 bg-transparent px-7 text-base font-semibold text-white hover:bg-white/10 hover:text-white">
-                <Link href="/streamline">Enviar proposta</Link>
-              </Button>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <Button
+                  asChild
+                  className="h-11 bg-primary px-7 text-base font-semibold text-white hover:bg-primary/90">
+                  <Link href="/streamline">Participar</Link>
+                </Button>
 
-              <Button
-                asChild
-                variant="outline"
-                className="h-11 border-blue-200/50 bg-transparent px-7 text-base font-semibold text-white hover:bg-white/10 hover:text-white">
-                <Link href="/report">Denunciar irregularidade</Link>
-              </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="h-11 border-blue-200/50 bg-transparent px-7 text-base font-semibold text-white hover:bg-white/10 hover:text-white">
+                  <Link href="/streamline">Enviar proposta</Link>
+                </Button>
+
+                <Button
+                  asChild
+                  variant="outline"
+                  className="h-11 border-blue-200/50 bg-transparent px-7 text-base font-semibold text-white hover:bg-white/10 hover:text-white">
+                  <Link href="/report">Denunciar irregularidade</Link>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
