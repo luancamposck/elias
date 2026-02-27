@@ -53,7 +53,7 @@ export const Footer = () => (
                 <Link
                   key={social.label}
                   href={social.href}
-                  className="text-gray-400 hover:text-orange-500 transition-colors"
+                  className="text-gray-400 hover:text-primary transition-colors"
                   aria-label={social.label}>
                   <Icon className="size-6" />
                 </Link>
@@ -70,7 +70,7 @@ export const Footer = () => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-gray-300 hover:text-orange-500 transition-colors">
+                  className="text-gray-300 hover:text-primary transition-colors">
                   {link.title}
                 </Link>
               </li>
@@ -86,7 +86,7 @@ export const Footer = () => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-gray-300 hover:text-orange-500 transition-colors">
+                  className="text-gray-300 hover:text-primary transition-colors">
                   {link.label}
                 </Link>
               </li>
@@ -104,7 +104,7 @@ export const Footer = () => (
               className="flex h-10 w-full rounded-md border px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm bg-gray-800 border-gray-700 text-white placeholder:text-gray-400"
               placeholder="Seu e-mail"
             />
-            <Button className="font-medium h-10 px-4 py-2 bg-orange-500 text-white hover:bg-orange-600">
+            <Button className="font-medium h-10 px-4 py-2 bg-primary text-white hover:bg-primary/90">
               OK
             </Button>
           </div>

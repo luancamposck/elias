@@ -72,7 +72,7 @@ const stats = [
   },
   {
     icon: Users,
-    color: "text-yellow-500",
+    color: "text-primary",
     value: "1.5k",
     label: "Déficit de professores na rede"
   },
@@ -100,7 +100,7 @@ const EducationProposalPage = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             {/* AÇÃO */}
-            <h2 className="text-3xl font-bold mb-8 text-gray-900">
+            <h2 className="text-3xl font-bold mb-8 text-foreground">
               Ação: O que será feito
             </h2>
 
@@ -110,7 +110,7 @@ const EducationProposalPage = () => {
               variant="education"
             />
 
-            <div className="prose prose-lg max-w-none text-gray-700 mt-12 mb-12">
+            <div className="prose prose-lg max-w-none text-foreground/80 mt-12 mb-12">
               <p className="text-xl leading-relaxed mb-6">
                 Como deputado federal, minha missão é garantir que a educação no
                 Distrito Federal seja um pilar para a formação de cidadãos
@@ -132,10 +132,10 @@ const EducationProposalPage = () => {
             </div>
 
             {/* META */}
-            <h2 className="text-3xl font-bold mb-8 text-gray-900">
+            <h2 className="text-3xl font-bold mb-8 text-foreground">
               Meta: Resultados Concretos
             </h2>
-            <div className="prose prose-lg max-w-none text-gray-700 mb-12">
+            <div className="prose prose-lg max-w-none text-foreground/80 mb-12">
               <div className="bg-amber-50 p-6 rounded-lg">
                 <h4 className="font-semibold text-lg mb-4">
                   Até o final do mandato:
@@ -149,10 +149,10 @@ const EducationProposalPage = () => {
             </div>
 
             {/* FISCALIZAÇÃO */}
-            <h2 className="text-3xl font-bold mb-8 text-gray-900">
+            <h2 className="text-3xl font-bold mb-8 text-foreground">
               Fiscalização: Controle e Transparência
             </h2>
-            <div className="prose prose-lg max-w-none text-gray-700 mb-12">
+            <div className="prose prose-lg max-w-none text-foreground/80 mb-12">
               <p className="mb-6">
                 É meu dever assegurar que os recursos da educação sejam usados
                 com máxima eficiência. Vou fiscalizar rigorosamente:

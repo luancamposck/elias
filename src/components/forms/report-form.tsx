@@ -77,7 +77,7 @@ export function ReportForm() {
                 <Input
                   type="email"
                   placeholder=""
-                  className="bg-white border-orange-500 text-black"
+                  className="bg-white border-primary text-foreground"
                   {...field}
                 />
               </FormControl>
@@ -97,7 +97,7 @@ export function ReportForm() {
               <FormControl>
                 <Textarea
                   rows={5}
-                  className="bg-white border-orange-500 text-black"
+                  className="bg-white border-primary text-foreground"
                   {...field}
                 />
               </FormControl>
@@ -120,7 +120,7 @@ export function ReportForm() {
                 <FormControl>
                   <Input
                     type="text"
-                    className="bg-white border-orange-500 text-black"
+                    className="bg-white border-primary text-foreground"
                     {...field}
                   />
                 </FormControl>
@@ -143,7 +143,7 @@ export function ReportForm() {
                 <FormControl>
                   <Input
                     type="tel"
-                    className="bg-white border-orange-500 text-black"
+                    className="bg-white border-primary text-foreground"
                     {...field}
                   />
                 </FormControl>
@@ -161,13 +161,13 @@ export function ReportForm() {
             type="button"
             variant="outline"
             onClick={onReset}
-            className="w-full border-orange-500 text-orange-500 hover:text-orange-500 font-bold gap-2">
-            <Trash2 className="size-4 text-orange-500" />
+            className="w-full border-primary text-primary hover:text-primary font-bold gap-2">
+            <Trash2 className="size-4 text-primary" />
             Limpar Formulário
           </Button>
           <Button
             type="submit"
-            className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold gap-2">
+            className="w-full bg-primary hover:bg-primary/90 text-white font-bold gap-2">
             <Send className="size-4" />
             Enviar Contribuição
           </Button>

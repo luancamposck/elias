@@ -27,7 +27,7 @@ const stats = [
   },
   {
     icon: TrendingUp,
-    color: "text-orange-500",
+    color: "text-primary",
     value: "R$ 5.2bi",
     label: "Investimento federal previsto"
   }
@@ -57,10 +57,10 @@ const TransportProposalPage = () => {
           <div className="max-w-4xl mx-auto">
             {/* DIAGNÓSTICO */}
             <div className="mb-12 rounded-2xl border border-gray-200 bg-gray-50 p-8 shadow-sm">
-              <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+              <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
                 O problema: Brasília cresce. A mobilidade não acompanha.
               </h2>
-              <p className="mt-4 text-lg text-gray-700">
+              <p className="mt-4 text-lg text-foreground/80">
                 O transporte público não atende à demanda, as obras estão
                 paradas e o cidadão perde horas no trânsito. Isso não é um
                 problema de falta de dinheiro, mas de falta de gestão e
@@ -70,10 +70,10 @@ const TransportProposalPage = () => {
 
             {/* AÇÃO */}
             <div className="mb-12">
-              <h2 className="text-3xl font-bold mb-4 text-gray-900">
+              <h2 className="text-3xl font-bold mb-4 text-foreground">
                 Ação: Minha prioridade é o seu tempo.
               </h2>
-              <div className="prose prose-lg max-w-none text-gray-700">
+              <div className="prose prose-lg max-w-none text-foreground/80">
                 <p>
                   Meu foco é destravar obras essenciais como a expansão do metrô
                   e os corredores BRT. Vou trabalhar para modernizar a frota de
@@ -84,10 +84,10 @@ const TransportProposalPage = () => {
             </div>
 
             {/* META */}
-            <h2 className="text-3xl font-bold mb-8 text-gray-900">
+            <h2 className="text-3xl font-bold mb-8 text-foreground">
               Meta: Resultados Concretos
             </h2>
-            <div className="prose prose-lg max-w-none text-gray-700 mb-12">
+            <div className="prose prose-lg max-w-none text-foreground/80 mb-12">
               <div className="bg-blue-50 p-6 rounded-lg">
                 <h4 className="font-semibold text-lg mb-4">
                   Até o final do mandato:
@@ -101,10 +101,10 @@ const TransportProposalPage = () => {
             </div>
 
             {/* FISCALIZAÇÃO */}
-            <h2 className="text-3xl font-bold mb-8 text-gray-900">
+            <h2 className="text-3xl font-bold mb-8 text-foreground">
               Fiscalização: Controle e Transparência
             </h2>
-            <div className="prose prose-lg max-w-none text-gray-700 mb-12">
+            <div className="prose prose-lg max-w-none text-foreground/80 mb-12">
               <p>
                 Meu mandato será um instrumento de fiscalização constante sobre
                 o andamento das obras, a aplicação dos recursos federais e a

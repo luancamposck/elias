@@ -74,7 +74,7 @@ const Home = () => {
               <Button
                 asChild
                 size="lg"
-                className="h-11 bg-orange-500 px-8 text-base font-semibold text-white shadow-lg shadow-orange-500/30 hover:bg-orange-600">
+                className="h-11 bg-primary px-8 text-base font-semibold text-white shadow-lg shadow-primary/30 hover:bg-primary/90">
                 <Link href="/streamline">
                   Eu participo
                   <ArrowRight className="size-5" />
@@ -99,7 +99,7 @@ const Home = () => {
       <section id="diagnostico" className="bg-white py-16 sm:py-20">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+            <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
               Quando a política falha, você sente.
             </h2>
           </div>
@@ -109,7 +109,7 @@ const Home = () => {
               <article
                 key={point}
                 className="rounded-xl border border-gray-200 bg-gray-50 p-6 shadow-sm">
-                <p className="text-base font-semibold text-gray-800 sm:text-lg">
+                <p className="text-base font-semibold text-foreground sm:text-lg">
                   {point}
                 </p>
               </article>
@@ -121,15 +121,15 @@ const Home = () => {
       <section className="bg-gray-50 py-16 sm:py-20">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl rounded-2xl border border-blue-100 bg-white p-8 shadow-sm sm:p-10">
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+            <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
               Não é ataque pessoal. É escolha de visão de país.
             </h2>
-            <p className="mt-5 text-base text-gray-700 sm:text-lg">
+            <p className="mt-5 text-base text-foreground/80 sm:text-lg">
               Você prefere um deputado que expande o Estado ou que cobre
               resultado?
             </p>
-            <p className="mt-2 text-base font-semibold text-gray-800 sm:text-lg">
-              A diferença não está no discurso. Está no voto.
+            <p className="mt-2 text-base font-semibold text-foreground sm:text-lg">
+              A diferença não está no di scurso. Está no voto.
             </p>
           </div>
         </div>
@@ -138,7 +138,7 @@ const Home = () => {
       <section className="bg-white py-16 sm:py-20">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+            <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
               Representar é responder pelo impacto.
             </h2>
           </div>
@@ -148,8 +148,8 @@ const Home = () => {
               <article
                 key={title}
                 className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-                <Icon className="size-8 text-orange-500" />
-                <h3 className="mt-4 text-xl font-bold text-gray-900">
+                <Icon className="size-8 text-primary" />
+                <h3 className="mt-4 text-xl font-bold text-foreground">
                   {title}
                 </h3>
               </article>
@@ -173,10 +173,10 @@ const Home = () => {
             </div>
             <div className="md:col-span-7">
               <div className="max-w-xl">
-                <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+                <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
                   Por que decidi entrar na política
                 </h2>
-                <div className="mt-6 space-y-4 text-lg leading-relaxed text-gray-700">
+                <div className="mt-6 space-y-4 text-lg leading-relaxed text-foreground/80">
                   <p>Eu não entrei na política por impulso.</p>
                   <p>
                     Entrei porque entendi que decisões mal feitas custam caro
@@ -194,7 +194,7 @@ const Home = () => {
                 <Button
                   asChild
                   size="lg"
-                  className="mt-8 h-11 bg-orange-500 px-8 text-base font-semibold text-white hover:bg-orange-600">
+                  className="mt-8 h-11 bg-primary px-8 text-base font-semibold text-white hover:bg-primary/90">
                   <Link href="#participar">
                     Participar agora
                     <ArrowRight className="size-5" />
@@ -209,7 +209,7 @@ const Home = () => {
       <section className="bg-white py-16 sm:py-20">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+            <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
               Áreas prioritárias
             </h2>
           </div>
@@ -219,16 +219,16 @@ const Home = () => {
               <Link
                 key={proposal.href}
                 href={proposal.href}
-                className="group rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-orange-200 hover:shadow-md">
+                className="group rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-primary/30 hover:shadow-md">
                 <article className="h-full">
-                  <Icon className="size-9 text-orange-500" />
-                  <h3 className="mt-4 text-xl font-bold text-gray-900">
+                  <Icon className="size-9 text-primary" />
+                  <h3 className="mt-4 text-xl font-bold text-foreground">
                     {proposal.title}
                   </h3>
-                  <p className="mt-2 text-base text-gray-700">
+                  <p className="mt-2 text-base text-foreground/80">
                     {PRIORITY_SUMMARIES[proposal.id] ?? proposal.description}
                   </p>
-                  <span className="mt-5 inline-flex items-center font-semibold text-orange-600">
+                  <span className="mt-5 inline-flex items-center font-semibold text-primary">
                     Ver detalhes
                     <ArrowRight className="size-5 transition group-hover:translate-x-1" />
                   </span>
@@ -241,7 +241,7 @@ const Home = () => {
 
       <section id="participar" className="bg-white py-16 sm:py-20">
         <div className="container mx-auto px-4">
-          <div className="rounded-2xl bg-blue-900 p-8 text-white shadow-lg sm:p-10">
+          <div className="rounded-2xl bg-foreground p-8 text-white shadow-lg sm:p-10 flex flex-col items-center">
             <h2 className="text-3xl font-bold sm:text-4xl">
               Brasília é de quem participa.
             </h2>
@@ -252,7 +252,7 @@ const Home = () => {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Button
                 asChild
-                className="h-11 bg-orange-500 px-7 text-base font-semibold text-white hover:bg-orange-600">
+                className="h-11 bg-primary px-7 text-base font-semibold text-white hover:bg-primary/90">
                 <Link href="/streamline">Participar</Link>
               </Button>
 
@@ -274,19 +274,19 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="bg-gray-50 pb-28 pt-16 text-center sm:pb-32 sm:pt-20">
+      <section className="bg-foreground/10 pb-28 pt-16 text-center sm:pb-32 sm:pt-20">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl rounded-2xl border border-gray-200 bg-white p-8 shadow-sm sm:p-10">
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+            <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
               Boa política melhora tudo ao redor.
             </h2>
-            <p className="mt-4 text-lg text-gray-700 sm:text-xl">
+            <p className="mt-4 text-lg text-foreground/80 sm:text-xl">
               Você participa. Eu represento.
             </p>
             <Button
               asChild
               size="lg"
-              className="mt-8 h-11 bg-orange-500 px-8 text-base font-semibold text-white hover:bg-orange-600">
+              className="mt-8 h-11 bg-primary px-8 text-base font-semibold text-white hover:bg-primary/90">
               <Link href="/streamline">
                 Participar agora
                 <ArrowRight className="size-5" />
@@ -299,7 +299,7 @@ const Home = () => {
       <Link
         href="/streamline"
         aria-label="Participar agora"
-        className="fixed bottom-5 right-4 z-50 inline-flex h-12 items-center justify-center rounded-full bg-orange-500 px-5 text-sm font-semibold text-white shadow-xl shadow-orange-500/35 transition hover:bg-orange-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 sm:bottom-6 sm:right-6 sm:h-11 sm:text-base">
+        className="fixed bottom-5 right-4 z-50 inline-flex h-12 items-center justify-center rounded-full bg-primary px-5 text-sm font-semibold text-white shadow-xl shadow-primary/35 transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 sm:bottom-6 sm:right-6 sm:h-11 sm:text-base">
         Participar
       </Link>
     </>

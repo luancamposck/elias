@@ -5,10 +5,10 @@ import { StreamlineForm } from "@/components/forms/streamline-form"
 const StreamlinePage = () => (
   <div className="container mx-auto px-4 mt-8 space-y-10">
     <div className="max-w-4xl mx-auto text-center">
-      <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 text-yellow-400 tracking-tight">
+      <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 text-primary tracking-tight">
         <span className="bg-blue-950 px-3 rounded-lg">Desburocratize!</span>
       </h1>
-      <p className="text-md sm:text-xl text-blue-950 font-semibold">
+      <p className="text-md sm:text-xl text-foreground font-semibold">
         Se a lei não protege o cidadão, ela precisa mudar. O partido NOVO quer
         um país LIVRE e SEGURO!
       </p>
@@ -39,10 +39,10 @@ const StreamlinePage = () => (
       </div>
     </div>
 
-    <div className="rounded-lg shadow-sm bg-blue-950 border border-yellow-500/30 text-white mb-12">
+    <div className="rounded-lg shadow-sm bg-blue-950 border border-primary/30 text-white mb-12">
       <div className="p-6 text-blue-100 space-y-4">
-        <div className="bg-yellow-900/30 border border-yellow-500/50 p-4 rounded-lg">
-          <p className="font-semibold text-yellow-200">
+        <div className="bg-primary/20 border border-primary/50 p-4 rounded-lg">
+          <p className="font-semibold text-primary">
             IMPORTANTE: Leis Estaduais, Municipais, Portarias, etc. não são de
             competência de um Deputado Federal.
           </p>
@@ -52,7 +52,7 @@ const StreamlinePage = () => (
     </div>
 
     <div className="mb-10">
-      <p className="text-center italic text-xl underline decoration-orange-400">
+      <p className="text-center italic text-xl underline decoration-primary">
         "Se você tem dez mil regras, destrói todo o respeito pela lei."
       </p>
       <p className="text-center font-semibold text-xl">- Winston Churchill</p>

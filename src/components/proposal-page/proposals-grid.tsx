@@ -14,10 +14,10 @@ interface ProposalsGridProps {
 }
 
 const variantColors = {
-  health: "text-orange-500",
+  health: "text-primary",
   transport: "text-blue-500",
   "public-service": "text-green-500",
-  security: "text-yellow-600",
+  security: "text-primary",
   assistance: "text-purple-500",
   education: "text-amber-600"
 }
@@ -38,7 +38,7 @@ export default function ProposalsGrid({
                 variantColors[variant]
               )}
             />
-            <p className="text-lg text-gray-700">{text}</p>
+            <p className="text-lg text-foreground/80">{text}</p>
           </div>
         ))}
       </div>
@@ -52,7 +52,7 @@ export default function ProposalsGrid({
                 variantColors[variant]
               )}
             />
-            <p className="text-lg text-gray-700">{text}</p>
+            <p className="text-lg text-foreground/80">{text}</p>
           </div>
         ))}
       </div>

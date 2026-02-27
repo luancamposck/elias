@@ -8,7 +8,7 @@ const DebureaucratizePage = () => (
       <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 text-red-400 tracking-tight">
         <span className="bg-blue-950 px-3 rounded-lg">Denuncie</span>
       </h1>
-      <p className="text-lg sm:text-xl text-blue-950 font-semibold">
+      <p className="text-lg sm:text-xl text-foreground font-semibold">
         O dinheiro é seu. Fiscalizar é dever.
       </p>
     </div>
@@ -28,13 +28,13 @@ const DebureaucratizePage = () => (
             participe ativamente."
           </p>
 
-          <p className="font-bold text-yellow-300">
+          <p className="font-bold text-primary">
             O partido NOVO quer um país AUSTERO e COMPROMETIDO com o
             crescimento!
           </p>
 
-          <div className="bg-yellow-900/30 border border-yellow-500/50 p-4 rounded-lg mt-4">
-            <p className="font-semibold text-yellow-200">
+          <div className="bg-primary/20 border border-primary/50 p-4 rounded-lg mt-4">
+            <p className="font-semibold text-primary">
               OBS: É importante se atentar para a origem do recurso — verifique
               se é realmente federal.
             </p>
@@ -43,7 +43,7 @@ const DebureaucratizePage = () => (
       </div>
     </div>
 
-    <div className="rounded-lg shadow-sm bg-blue-950 border border-yellow-500/30 text-white mb-12 max-w-2xl mx-auto">
+    <div className="rounded-lg shadow-sm bg-blue-950 border border-primary/30 text-white mb-12 max-w-2xl mx-auto">
       <div className="p-6 text-blue-100 space-y-4">
         <ReportForm />
       </div>

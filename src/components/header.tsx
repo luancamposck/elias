@@ -66,17 +66,17 @@ export const Header = () => {
               <li key={item.id} className="flex flex-col">
                 {item.proposals ? (
                   <>
-                    <span className="text-orange-600 font-medium py-2 px-3">
+                    <span className="text-primary font-medium py-2 px-3">
                       {item.name}
                     </span>
-                    <ul className="pl-4 border-l-orange-200 border-l-2">
+                    <ul className="pl-4 border-l-primary/30 border-l-2">
                       {item.proposals.map((sublink) => {
                         return (
                           <li key={sublink.id} className="py-2 px-3">
                             <Link
                               href={sublink.href}
                               onClick={() => setIsMenuOpen(false)}
-                              className="text-gray-800 font-medium">
+                              className="text-foreground font-medium">
                               {sublink.title}
                             </Link>
                           </li>
@@ -88,7 +88,7 @@ export const Header = () => {
                   <Link
                     href={item.href}
                     onClick={() => setIsMenuOpen(false)}
-                    className="text-gray-800 font-medium py-2 px-3">
+                    className="text-foreground font-medium py-2 px-3">
                     {item.name}
                   </Link>
                 )}
@@ -99,7 +99,7 @@ export const Header = () => {
           <Separator />
 
           <div className="p-4">
-            <Button className="w-full bg-yellow-500 hover:bg-yellow-400 text-black hover:text-black font-bold h-10">
+            <Button className="w-full bg-primary hover:bg-primary/80 text-primary-foreground hover:text-primary-foreground font-bold h-10">
               Seja um voluntário
             </Button>
           </div>
@@ -124,10 +124,10 @@ export const Header = () => {
                   <Link
                     href={proposal.href}
                     key={proposal.id}
-                    className="flex p-2 rounded-lg hover:cursor-pointer hover:bg-orange-500/10 focus:bg-orange-500/10 transition-colors duration-300 group">
-                    <Icon className="size-12 text-orange-500" />
+                    className="flex p-2 rounded-lg hover:cursor-pointer hover:bg-primary/10 focus:bg-primary/10 transition-colors duration-300 group">
+                    <Icon className="size-12 text-primary" />
                     <div className="ml-4">
-                      <h3 className="font-medium group-hover:text-orange-500 transition-colors duration-300">
+                      <h3 className="font-medium group-hover:text-primary transition-colors duration-300">
                         {proposal.title.split(" ")[0]}
                       </h3>
                       <p className="text-muted-foreground">
@@ -146,7 +146,7 @@ export const Header = () => {
         )}
       </div>
 
-      <Button className="hidden lg:flex bg-yellow-500 hover:bg-yellow-400 text-black hover:text-black font-bold h-10">
+      <Button className="hidden lg:flex bg-primary hover:bg-primary/80 text-primary-foreground hover:text-primary-foreground font-bold h-10">
         Seja um voluntário
       </Button>
     </nav>

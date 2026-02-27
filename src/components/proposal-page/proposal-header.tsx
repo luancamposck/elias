@@ -37,7 +37,7 @@ const ProposalHeader = ({
       )}>
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <Icon className="size-16 sm:size-20 mx-auto mb-6 text-yellow-400" />
+          <Icon className="size-16 sm:size-20 mx-auto mb-6 text-primary" />
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
             {title}
           </h1>
