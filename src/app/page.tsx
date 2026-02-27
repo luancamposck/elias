@@ -239,6 +239,21 @@ const Home = () => {
         </div>
       </section>
 
+      <section className="relative h-[280px] sm:h-[360px] md:h-[440px] overflow-hidden">
+        <Image
+          src="/brasilia.jpeg"
+          alt="Vista aérea da Esplanada dos Ministérios, Brasília"
+          fill
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/25 to-transparent" />
+        <div className="relative z-10 flex h-full items-end justify-center px-4 pb-8 sm:pb-10">
+          <p className="max-w-2xl text-center text-2xl font-bold leading-tight text-white drop-shadow-md sm:text-3xl md:text-4xl">
+            O futuro de Brasília começa com participação.
+          </p>
+        </div>
+      </section>
+
       <section id="participar" className="bg-white py-16 sm:py-20">
         <div className="container mx-auto px-4">
           <div className="rounded-2xl bg-foreground p-8 text-white shadow-lg sm:p-10 flex flex-col items-center">
