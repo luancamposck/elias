@@ -1,7 +1,6 @@
 import {
   Activity,
   BarChart3,
-  Gavel,
   Shield,
   ShieldCheck,
   Target,
@@ -47,12 +46,42 @@ const stats = [
 const SecurityProposalPage = () => {
   return (
     <div className="bg-white">
-      <ProposalHeader
-        icon={ShieldCheck}
-        title="Segurança é Prioridade. Proteção é Compromisso."
-        subtitle="O Distrito Federal avançou. Mas não podemos retroceder. Segurança é ordem, presença e responsabilidade."
-        variant="security"
-      />
+      <div className="relative isolate overflow-hidden">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute right-0 top-0 z-20 grid grid-cols-3 gap-0">
+          <span className="block size-6 bg-orange-500 sm:size-8 md:size-10" />
+          <span className="block size-6 sm:size-8 md:size-10" />
+          <span className="block size-6 bg-orange-500 sm:size-8 md:size-10" />
+          <span className="block size-6 sm:size-8 md:size-10" />
+          <span className="block size-6 bg-orange-300 sm:size-8 md:size-10" />
+          <span className="block size-6 sm:size-8 md:size-10" />
+          <span className="block size-6 sm:size-8 md:size-10" />
+          <span className="block size-6 sm:size-8 md:size-10" />
+          <span className="block size-6 bg-white ring-1 ring-black/10 sm:size-8 md:size-10" />
+        </div>
+
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute bottom-0 left-0 z-20 grid grid-cols-3 gap-0">
+          <span className="block size-6 bg-white ring-1 ring-black/10 sm:size-8 md:size-10" />
+          <span className="block size-6 sm:size-8 md:size-10" />
+          <span className="block size-6 sm:size-8 md:size-10" />
+          <span className="block size-6 sm:size-8 md:size-10" />
+          <span className="block size-6 bg-orange-300 sm:size-8 md:size-10" />
+          <span className="block size-6 sm:size-8 md:size-10" />
+          <span className="block size-6 bg-orange-500 sm:size-8 md:size-10" />
+          <span className="block size-6 sm:size-8 md:size-10" />
+          <span className="block size-6 bg-orange-500 sm:size-8 md:size-10" />
+        </div>
+
+        <ProposalHeader
+          icon={ShieldCheck}
+          title="Segurança é Prioridade. Proteção é Compromisso."
+          subtitle="O Distrito Federal avançou. Mas não podemos retroceder. Segurança é ordem, presença e responsabilidade."
+          variant="security"
+        />
+      </div>
 
       <StatsSection
         title="Resultados que mostram direção — mas exigem continuidade."
