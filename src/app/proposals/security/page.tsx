@@ -1,168 +1,214 @@
-import { Gavel, Shield, TrendingUp, UserCheck } from "lucide-react"
+import {
+  Activity,
+  BarChart3,
+  Gavel,
+  Shield,
+  ShieldCheck,
+  Target,
+  TrendingDown,
+  UserCheck,
+  Users
+} from "lucide-react"
 
 import {
   CTAFooter,
   DetailSection,
   ProposalHeader,
-  ProposalsGrid,
   StatsSection
 } from "@/components/proposal-page"
 
-const leftProposals: string[] = [
-  "Leis mais duras contra criminosos",
-  "Fim da progressão de regime para crimes hediondos",
-  "Integração das forças policiais",
-  "Combate ao narcotráfico e facções"
-]
-
-const rightProposals: string[] = [
-  "Tecnologia e vigilância inteligente",
-  "Câmeras corporais e drones",
-  "Fiscalização do Fundo Constitucional",
-  "Mais recursos para equipamentos e treinamento"
-]
-
-const financingItems: string[] = [
-  "Destinação de emendas para compra de viaturas e equipamentos modernos",
-  "Aumento dos recursos do Fundo Constitucional para a segurança do DF",
-  "Verbas para contratação e treinamento de novos policiais",
-  "Financiamento de sistemas de monitoramento e inteligência"
-]
-
-const legislativeItems: string[] = [
-  "Fim da progressão de regime para crimes hediondos",
-  "Aumento da pena mínima para roubo, furto e homicídio",
-  'Fim da "saidinha" para presos de alta periculosidade',
-  "Tipificação de crimes relacionados a facções como terrorismo"
-]
-
-const oversightItems: string[] = [
-  "Auditoria rigorosa dos contratos da segurança pública",
-  "Acompanhamento das operações conjuntas e seus resultados",
-  "Transparência total nos gastos do Fundo Constitucional da Segurança",
-  "Fiscalização da destinação de emendas para equipamentos e treinamento"
-]
-
-const goalItems: string[] = [
-  "Aprovação de leis que acabem com a progressão de regime para crimes hediondos",
-  "Criação do banco de dados unificado entre as polícias do DF",
-  "Implementação de câmeras corporais em 100% dos policiais em operação",
-  "Aumento de 30% nas emendas destinadas à segurança do DF",
-  "Redução de 20% nos índices de criminalidade violenta"
-]
-
 const stats = [
   {
-    icon: TrendingUp,
-    color: "text-red-500",
+    icon: Users,
+    color: "text-blue-500",
     value: "+15%",
-    label: "Aumento de roubos"
+    label: "Aumento do efetivo"
   },
   {
-    icon: Gavel,
-    color: "text-primary",
+    icon: TrendingDown,
+    color: "text-green-500",
     value: "80%",
-    label: "Criminosos reincidentes"
+    label: "Menos reincidência"
   },
   {
     icon: UserCheck,
-    color: "text-blue-500",
-    value: "2.1k",
-    label: "Déficit de policiais"
+    color: "text-orange-500",
+    value: "21 mil",
+    label: "Detenções por ano"
   },
   {
     icon: Shield,
-    color: "text-green-500",
-    value: "R$ 3.2bi",
-    label: "Fundo Constitucional (Segurança)"
+    color: "text-blue-600",
+    value: "R$ 3,2bi",
+    label: "Fundo Constitucional"
   }
 ]
 
 const SecurityProposalPage = () => {
   return (
-    <div>
+    <div className="bg-white">
       <ProposalHeader
-        icon={Shield}
-        title="Segurança Pública"
-        subtitle="Impunidade custa vidas."
+        icon={ShieldCheck}
+        title="Segurança é Prioridade. Proteção é Compromisso."
+        subtitle="O Distrito Federal avançou. Mas não podemos retroceder. Segurança é ordem, presença e responsabilidade."
         variant="security"
       />
 
-      <StatsSection title="A Segurança no DF em Números" stats={stats} />
+      <StatsSection
+        title="Resultados que mostram direção — mas exigem continuidade."
+        stats={stats}
+      />
 
-      <div className="py-16 bg-white">
+      <section className="py-16 bg-white border-b">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            {/* AÇÃO */}
-            <h2 className="text-3xl font-bold mb-8 text-foreground">
-              Ação: O que será feito
-            </h2>
-
-            <ProposalsGrid
-              leftProposals={leftProposals}
-              rightProposals={rightProposals}
-              variant="security"
-            />
-
-            <div className="prose prose-lg max-w-none text-foreground/80 mt-12 mb-12">
-              <p className="text-xl leading-relaxed mb-6">
-                A segurança pública começa com leis federais fortes. Como
-                deputado federal, minha principal função será criar e aprovar
-                leis mais duras, que acabem com a impunidade e deem à polícia as
-                ferramentas necessárias para proteger o cidadão de bem.
-              </p>
-
-              <DetailSection
-                title="Financiamento e Recursos"
-                description="Vou garantir que o DF receba os recursos necessários para equipar e fortalecer as forças de segurança:"
-                items={financingItems}
-              />
-
-              <DetailSection
-                title="Propostas de Lei"
-                description="Vou propor e lutar pela aprovação de leis que realmente punam os criminosos:"
-                items={legislativeItems}
-              />
+            <div className="mb-16">
+              <h2 className="text-3xl font-bold mb-6 text-gray-900 flex items-center gap-3">
+                <Target className="text-orange-500 size-8" />
+                Diagnóstico Estratégico
+              </h2>
+              <div className="prose prose-lg max-w-none text-gray-700">
+                <p className="text-xl leading-relaxed font-medium">
+                  O DF evoluiu. Houve reforço no efetivo, redução da
+                  reincidência e investimentos recordes. Mas segurança não é
+                  evento. É sistema permanente.
+                </p>
+                <p className="mt-4">
+                  Sabemos que o medo de retroceder é real. Segurança exige
+                  prioridade constante e coragem para manter o que funciona,
+                  ajustando o que ainda precisa de ordem.
+                </p>
+              </div>
             </div>
 
-            {/* META */}
-            <h2 className="text-3xl font-bold mb-8 text-foreground">
-              Meta: Resultados Concretos
+            <div className="mb-16 bg-gray-900 text-white p-8 rounded-2xl shadow-xl relative overflow-hidden">
+              <div className="relative z-10">
+                <h3 className="text-2xl font-bold mb-4 text-orange-400">
+                  O que está em jogo não são números. São vidas.
+                </h3>
+                <p className="text-lg text-gray-300 leading-relaxed">
+                  Você merece voltar para casa em paz, proteger sua família e
+                  ter controle sobre o seu bairro. Proteção, Ordem e Respeito
+                  são os pilares para que a vida em Brasília seja plena. O
+                  Estado deve estar presente onde o cidadão mais precisa.
+                </p>
+              </div>
+              <Shield className="absolute -right-10 -bottom-10 size-48 text-white/5 rotate-12" />
+            </div>
+
+            <h2 className="text-3xl font-bold mb-10 text-gray-900">
+              Ação: O Plano de Proteção e Ordem
             </h2>
-            <div className="prose prose-lg max-w-none text-foreground/80 mb-12">
-              <div className="bg-gray-100 p-6 rounded-lg">
-                <h4 className="font-semibold text-lg mb-4">
-                  Até o final do mandato:
+
+            <div className="grid md:grid-cols-2 gap-8 mb-16">
+              <div className="bg-gray-50 p-6 rounded-xl border-l-4 border-orange-500">
+                <h4 className="font-bold text-xl mb-4 flex items-center gap-2">
+                  <Activity className="size-5 text-orange-500" />
+                  Vida e Ordem
                 </h4>
-                <ul className="space-y-2">
-                  {goalItems.map((m) => (
-                    <li key={m}>✓ {m}</li>
-                  ))}
+                <ul className="space-y-3 text-gray-700">
+                  <li>• Combate firme às organizações criminosas</li>
+                  <li>• Integração real das forças policiais</li>
+                  <li>• Presença territorial permanente nas RAs</li>
+                </ul>
+              </div>
+
+              <div className="bg-gray-50 p-6 rounded-xl border-l-4 border-blue-500">
+                <h4 className="font-bold text-xl mb-4 flex items-center gap-2">
+                  <UserCheck className="size-5 text-blue-500" />
+                  Fim da Reincidência
+                </h4>
+                <ul className="space-y-3 text-gray-700">
+                  <li>• Monitoramento ativo de criminosos reincidentes</li>
+                  <li>• Tecnologia integrada de dados criminais</li>
+                  <li>• Acompanhamento rigoroso pós-cárcere</li>
+                </ul>
+              </div>
+
+              <div className="bg-gray-50 p-6 rounded-xl border-l-4 border-green-500">
+                <h4 className="font-bold text-xl mb-4 flex items-center gap-2">
+                  <BarChart3 className="size-5 text-green-500" />
+                  Tecnologia e Inteligência
+                </h4>
+                <ul className="space-y-3 text-gray-700">
+                  <li>• Ampliação do uso de dados estratégicos</li>
+                  <li>• Monitoramento por manchas criminais</li>
+                  <li>• Digitalização completa da segurança pública</li>
+                </ul>
+              </div>
+
+              <div className="bg-gray-50 p-6 rounded-xl border-l-4 border-gray-900">
+                <h4 className="font-bold text-xl mb-4 flex items-center gap-2">
+                  <ShieldCheck className="size-5 text-gray-900" />
+                  Sistema Prisional Eficiente
+                </h4>
+                <ul className="space-y-3 text-gray-700">
+                  <li>• Ampliação responsável de vagas</li>
+                  <li>• Gestão moderna e focada em resultados</li>
+                  <li>• Ressocialização com controle e disciplina</li>
                 </ul>
               </div>
             </div>
 
-            {/* FISCALIZAÇÃO */}
-            <h2 className="text-3xl font-bold mb-8 text-foreground">
-              Fiscalização: Controle e Transparência
-            </h2>
-            <div className="prose prose-lg max-w-none text-foreground/80 mb-12">
-              <p className="mb-6">
-                O DF recebe bilhões para a segurança. Meu papel é garantir que
-                cada centavo seja investido onde realmente importa: na proteção
-                do cidadão.
-              </p>
-              <ul className="list-disc list-inside mb-6 space-y-2">
-                {oversightItems.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
+            <DetailSection
+              title="Investimento inteligente, não gasto improvisado"
+              description="A gestão do Fundo Constitucional exige responsabilidade institucional:"
+              items={[
+                "Garantia de manutenção e ampliação dos recursos federais",
+                "Melhor gestão orçamentária com foco em equipamentos de ponta",
+                "Uso estratégico dos investimentos em inteligência policial"
+              ]}
+            />
+
+            <DetailSection
+              title="Propostas de Lei"
+              description="Atuarei no Congresso Nacional por uma legislação que proteja o cidadão:"
+              items={[
+                "Endurecimento de penas contra organizações criminosas",
+                "Modernização do sistema penal para reduzir a impunidade",
+                "Reforço à integração nacional das polícias e inteligência"
+              ]}
+            />
+
+            <div className="bg-orange-50 p-8 rounded-2xl mb-16 border border-orange-100">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                <Target className="size-7 text-orange-600" />
+                Metas: Resultados Concretos
+              </h3>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="flex items-start gap-3">
+                  <span className="text-orange-600 font-bold">✓</span>
+                  <p>Redução contínua de crimes violentos letais</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-orange-600 font-bold">✓</span>
+                  <p>Monitoramento público de indicadores criminais</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-orange-600 font-bold">✓</span>
+                  <p>Painel de metas por Região Administrativa</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-orange-600 font-bold">✓</span>
+                  <p>Avaliação permanente de desempenho policial</p>
+                </div>
+              </div>
             </div>
 
-            <CTAFooter message="Juntos, vamos devolver a paz ao Distrito Federal." />
+            <DetailSection
+              title="Fiscalização e Transparência"
+              description="Transparência fortalece a confiança. Meu compromisso é com:"
+              items={[
+                "Fortalecimento do controle social sobre a segurança",
+                "Dados públicos acessíveis e em tempo real",
+                "Prestação de contas periódica sobre os investimentos"
+              ]}
+            />
+
+            <CTAFooter message="Segurança não é promessa. É prioridade. Junte-se à defesa da vida." />
           </div>
         </div>
-      </div>
+      </section>
     </div>
   )
 }
