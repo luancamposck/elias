@@ -9,7 +9,7 @@ import {
 } from "lucide-react"
 import Image from "next/image"
 
-import { Button } from "@/components/ui/button"
+import { CTAFooter, ProposalHeader } from "@/components/proposal-page"
 
 const pillars = [
   {
@@ -49,34 +49,12 @@ const commitments = [
 const EducationProposalPage = () => {
   return (
     <div className="bg-white">
-      <section className="relative overflow-hidden bg-slate-950 text-white">
-        <Image
-          src="/main-banner.jpg"
-          alt="Elias Medeiros com a comunidade do Distrito Federal"
-          fill
-          priority
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-900/90 to-slate-900/45" />
-
-        <div className="relative container mx-auto px-4 py-20 sm:py-24 md:py-28">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6">
-              O futuro do seu filho não pode esperar.
-            </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-slate-100 mb-8">
-              O Distrito Federal investe bilhões de reais em educação todos os
-              anos. Mas os resultados ainda estão abaixo do esperado.
-            </p>
-
-            <Button
-              asChild
-              className="h-12 bg-orange-500 text-white hover:bg-orange-600 font-bold px-7">
-              <a href="#plano-educacao">Conheça o Plano Educação com Gestão</a>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <ProposalHeader
+        icon={BookOpen}
+        title="Educação"
+        subtitle="Educação de qualidade forma cidadãos livres."
+        variant="education"
+      />
 
       <section id="plano-educacao" className="py-16 bg-slate-50 border-b">
         <div className="container mx-auto px-4">
@@ -248,30 +226,10 @@ const EducationProposalPage = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-slate-900 text-white">
+      <section className="py-16 bg-white border-b">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-8">
-              Educação forte muda tudo ao redor.
-            </h2>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Button
-                asChild
-                className="h-11 bg-orange-500 text-white hover:bg-orange-600 font-bold px-8">
-                <a
-                  href="https://app.eliasmedeiros.bsb.br"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  Apoiar essa proposta
-                </a>
-              </Button>
-              <Button className="h-11 border border-orange-300 text-orange-300 hover:bg-orange-500 hover:text-white font-bold px-8">
-                Compartilhar
-              </Button>
-            </div>
-            <p className="text-lg text-slate-200">
-              Você participa. Eu represento.
-            </p>
+          <div className="max-w-4xl mx-auto">
+            <CTAFooter message="Educação forte muda tudo ao redor." />
           </div>
         </div>
       </section>
