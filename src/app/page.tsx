@@ -37,6 +37,60 @@ const PRIORITY_SUMMARIES: Record<string, string> = {
   assistance: "Assistência correta alcança quem mais precisa."
 }
 
+const PRIORITY_THEME: Record<
+  string,
+  {
+    iconBg: string
+    iconText: string
+    accentBar: string
+    ctaText: string
+    borderHover: string
+  }
+> = {
+  health: {
+    iconBg: "from-red-500/20 to-red-500/5",
+    iconText: "text-red-600",
+    accentBar: "from-red-600 to-red-400",
+    ctaText: "text-red-600",
+    borderHover: "hover:border-red-200"
+  },
+  education: {
+    iconBg: "from-amber-500/20 to-amber-500/5",
+    iconText: "text-amber-600",
+    accentBar: "from-amber-600 to-amber-400",
+    ctaText: "text-amber-600",
+    borderHover: "hover:border-amber-200"
+  },
+  transport: {
+    iconBg: "from-blue-500/20 to-blue-500/5",
+    iconText: "text-blue-600",
+    accentBar: "from-blue-600 to-blue-400",
+    ctaText: "text-blue-600",
+    borderHover: "hover:border-blue-200"
+  },
+  "public-service": {
+    iconBg: "from-green-500/20 to-green-500/5",
+    iconText: "text-green-600",
+    accentBar: "from-green-600 to-green-400",
+    ctaText: "text-green-600",
+    borderHover: "hover:border-green-200"
+  },
+  security: {
+    iconBg: "from-slate-600/20 to-slate-600/5",
+    iconText: "text-slate-700",
+    accentBar: "from-slate-700 to-slate-500",
+    ctaText: "text-slate-700",
+    borderHover: "hover:border-slate-300"
+  },
+  assistance: {
+    iconBg: "from-purple-500/20 to-purple-500/5",
+    iconText: "text-purple-600",
+    accentBar: "from-purple-600 to-purple-400",
+    ctaText: "text-purple-600",
+    borderHover: "hover:border-purple-200"
+  }
+}
+
 const Home = () => (
   <>
     {/* ── Hero ─────────────────────────────────────────────── */}
@@ -112,7 +166,10 @@ const Home = () => (
                 size="lg"
                 className="h-12 bg-primary px-8 text-base font-semibold text-white shadow-[--shadow-glow] hover:bg-primary/90 hover:shadow-[--shadow-glow-strong]"
                 style={{ animation: "glow-pulse 3s ease-in-out infinite" }}>
-                <a href="https://app.eliasmedeiros.bsb.br" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://app.eliasmedeiros.bsb.br"
+                  target="_blank"
+                  rel="noopener noreferrer">
                   Eu participo
                   <ArrowRight className="size-5" />
                 </a>
@@ -212,7 +269,10 @@ const Home = () => (
     {/* ── Pilares de Representação ─────────────────────────── */}
     <section className="relative overflow-hidden bg-white py-20 sm:py-28">
       {/* Subtle line pattern */}
-      <div className="line-pattern pointer-events-none absolute inset-0" aria-hidden="true" />
+      <div
+        className="line-pattern pointer-events-none absolute inset-0"
+        aria-hidden="true"
+      />
       <div className="container relative mx-auto px-4">
         <Reveal className="mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
@@ -325,7 +385,10 @@ const Home = () => (
                 size="lg"
                 className="mt-8 h-12 bg-primary px-8 text-base font-semibold text-white hover:bg-primary/90"
                 style={{ boxShadow: "var(--shadow-glow)" }}>
-                <a href="https://app.eliasmedeiros.bsb.br" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://app.eliasmedeiros.bsb.br"
+                  target="_blank"
+                  rel="noopener noreferrer">
                   Participar agora
                   <ArrowRight className="size-5" />
                 </a>
@@ -344,7 +407,10 @@ const Home = () => (
         aria-hidden="true"
       />
       {/* Dot pattern overlay */}
-      <div className="dot-pattern pointer-events-none absolute inset-0" aria-hidden="true" />
+      <div
+        className="dot-pattern pointer-events-none absolute inset-0"
+        aria-hidden="true"
+      />
       {/* Floating shapes */}
       <div
         data-geo
@@ -370,27 +436,37 @@ const Home = () => (
         </Reveal>
 
         <StaggerContainer className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {PROPOSALS.map(({ icon: Icon, ...proposal }) => (
-            <StaggerItem key={proposal.href}>
-              <Link
-                href={proposal.href}
-                className="card-premium group block p-6">
-                <div className="relative z-10 inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary/15 to-primary/5">
-                  <Icon className="size-6 text-primary" />
-                </div>
-                <h3 className="relative z-10 mt-5 text-xl font-bold text-foreground">
-                  {proposal.title}
-                </h3>
-                <p className="relative z-10 mt-2 text-base leading-relaxed text-foreground/60">
-                  {PRIORITY_SUMMARIES[proposal.id] ?? proposal.description}
-                </p>
-                <span className="relative z-10 mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primary">
-                  Ver detalhes
-                  <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </span>
-              </Link>
-            </StaggerItem>
-          ))}
+          {PROPOSALS.map(({ icon: Icon, ...proposal }) => {
+            const theme =
+              PRIORITY_THEME[proposal.id] ?? PRIORITY_THEME["public-service"]
+
+            return (
+              <StaggerItem key={proposal.href}>
+                <Link
+                  href={proposal.href}
+                  className={`card-premium group block p-6 ${theme.borderHover}`}>
+                  <div
+                    className={`relative z-10 inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br ${theme.iconBg}`}>
+                    <Icon className={`size-6 ${theme.iconText}`} />
+                  </div>
+                  <div
+                    className={`relative z-10 mt-4 h-1 w-10 rounded-full bg-gradient-to-r ${theme.accentBar}`}
+                  />
+                  <h3 className="relative z-10 mt-5 text-xl font-bold text-foreground">
+                    {proposal.title}
+                  </h3>
+                  <p className="relative z-10 mt-2 text-base leading-relaxed text-foreground/60">
+                    {PRIORITY_SUMMARIES[proposal.id] ?? proposal.description}
+                  </p>
+                  <span
+                    className={`relative z-10 mt-5 inline-flex items-center gap-1 text-sm font-semibold ${theme.ctaText}`}>
+                    Ver detalhes
+                    <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </span>
+                </Link>
+              </StaggerItem>
+            )
+          })}
         </StaggerContainer>
       </div>
     </section>
@@ -438,22 +514,40 @@ const Home = () => (
                 <Button
                   asChild
                   className="h-11 bg-primary px-7 text-base font-semibold text-white hover:bg-primary/90"
-                  style={{ boxShadow: "var(--shadow-glow)", animation: "glow-pulse 3s ease-in-out infinite" }}>
-                  <a href="https://app.eliasmedeiros.bsb.br" target="_blank" rel="noopener noreferrer">Participar</a>
+                  style={{
+                    boxShadow: "var(--shadow-glow)",
+                    animation: "glow-pulse 3s ease-in-out infinite"
+                  }}>
+                  <a
+                    href="https://app.eliasmedeiros.bsb.br"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Participar
+                  </a>
                 </Button>
 
                 <Button
                   asChild
                   variant="outline"
                   className="h-11 border-white/20 bg-white/[0.06] px-7 text-base font-semibold text-white backdrop-blur-sm hover:bg-white/15 hover:text-white">
-                  <a href="https://app.eliasmedeiros.bsb.br" target="_blank" rel="noopener noreferrer">Enviar proposta</a>
+                  <a
+                    href="https://app.eliasmedeiros.bsb.br"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Enviar proposta
+                  </a>
                 </Button>
 
                 <Button
                   asChild
                   variant="outline"
                   className="h-11 border-white/20 bg-white/[0.06] px-7 text-base font-semibold text-white backdrop-blur-sm hover:bg-white/15 hover:text-white">
-                  <a href="https://app.eliasmedeiros.bsb.br" target="_blank" rel="noopener noreferrer">Denunciar irregularidade</a>
+                  <a
+                    href="https://app.eliasmedeiros.bsb.br"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Denunciar irregularidade
+                  </a>
                 </Button>
               </div>
             </div>
@@ -487,7 +581,10 @@ const Home = () => (
                 size="lg"
                 className="mt-8 h-12 bg-primary px-8 text-base font-semibold text-white hover:bg-primary/90"
                 style={{ boxShadow: "var(--shadow-glow)" }}>
-                <a href="https://app.eliasmedeiros.bsb.br" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://app.eliasmedeiros.bsb.br"
+                  target="_blank"
+                  rel="noopener noreferrer">
                   Participar agora
                   <ArrowRight className="size-5" />
                 </a>
