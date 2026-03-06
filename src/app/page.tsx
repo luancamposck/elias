@@ -91,6 +91,25 @@ const PRIORITY_THEME: Record<
   }
 }
 
+const PRIORITY_CARD_ORDER = [
+  "security",
+  "education",
+  "health",
+  "assistance",
+  "public-service",
+  "transport"
+]
+
+const PRIORITY_CARD_INDEX = new Map(
+  PRIORITY_CARD_ORDER.map((id, index) => [id, index])
+)
+
+const ORDERED_PRIORITY_PROPOSALS = [...PROPOSALS].sort((a, b) => {
+  const indexA = PRIORITY_CARD_INDEX.get(a.id) ?? Number.MAX_SAFE_INTEGER
+  const indexB = PRIORITY_CARD_INDEX.get(b.id) ?? Number.MAX_SAFE_INTEGER
+  return indexA - indexB
+})
+
 const Home = () => (
   <>
     {/* ── Hero ─────────────────────────────────────────────── */}
@@ -380,19 +399,28 @@ const Home = () => (
                   compromisso.
                 </p>
               </div>
-              <Button
-                asChild
-                size="lg"
-                className="mt-8 h-12 bg-primary px-8 text-base font-semibold text-white hover:bg-primary/90"
-                style={{ boxShadow: "var(--shadow-glow)" }}>
-                <a
-                  href="https://app.eliasmedeiros.bsb.br"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  Participar agora
-                  <ArrowRight className="size-5" />
-                </a>
-              </Button>
+              <div className="mt-8 flex flex-wrap items-center gap-3">
+                <Button
+                  asChild
+                  size="lg"
+                  className="h-12 bg-primary px-8 text-base font-semibold text-white hover:bg-primary/90"
+                  style={{ boxShadow: "var(--shadow-glow)" }}>
+                  <a
+                    href="https://app.eliasmedeiros.bsb.br"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Participar agora
+                    <ArrowRight className="size-5" />
+                  </a>
+                </Button>
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="h-12 border-primary px-8 text-base font-semibold text-primary hover:bg-primary/10">
+                  <Link href="/quem-sou">Quem sou</Link>
+                </Button>
+              </div>
             </div>
           </Reveal>
         </div>
@@ -436,7 +464,7 @@ const Home = () => (
         </Reveal>
 
         <StaggerContainer className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {PROPOSALS.map(({ icon: Icon, ...proposal }) => {
+          {ORDERED_PRIORITY_PROPOSALS.map(({ icon: Icon, ...proposal }) => {
             const theme =
               PRIORITY_THEME[proposal.id] ?? PRIORITY_THEME["public-service"]
 
