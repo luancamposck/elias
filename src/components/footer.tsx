@@ -9,8 +9,8 @@ const proposalLinks = PROPOSALS
 
 const participateLinks = [
   { href: "https://app.eliasmedeiros.bsb.br", label: "Seja um voluntário" },
-  { href: "/streamline", label: "Desburocratize" },
-  { href: "/report", label: "Denuncie" },
+  { href: "/desburocratize", label: "Desburocratize" },
+  { href: "/denuncia", label: "Denuncie" },
   { href: "/", label: "Fale conosco" }
 ]
 
