@@ -277,7 +277,7 @@ const EducationProposalPage = () => {
             <StaggerContainer className="mb-8 grid gap-6 md:grid-cols-2">
               {globalCases.map(({ location, description }) => (
                 <StaggerItem key={location}>
-                  <article className="card-premium group p-6 hover:shadow-[0_20px_48px_-28px_rgba(236,103,28,0.5)]">
+                  <article className="card-premium bg-white group p-6 hover:shadow-[0_20px_48px_-28px_rgba(236,103,28,0.5)]">
                     <div className="mb-3 h-1 w-10 rounded-full bg-gradient-to-r from-orange-500 to-orange-500/20" />
                     <h3 className="mb-3 text-xl font-bold text-slate-900 transition-transform duration-300 group-hover:translate-x-1">
                       {location}

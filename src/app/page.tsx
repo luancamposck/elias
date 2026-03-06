@@ -45,6 +45,7 @@ const PRIORITY_THEME: Record<
     accentBar: string
     ctaText: string
     borderHover: string
+    cardBg: string
   }
 > = {
   health: {
@@ -52,42 +53,48 @@ const PRIORITY_THEME: Record<
     iconText: "text-red-600",
     accentBar: "from-red-600 to-red-400",
     ctaText: "text-red-600",
-    borderHover: "hover:border-red-200"
+    borderHover: "hover:border-red-200",
+    cardBg: "bg-red-50"
   },
   education: {
     iconBg: "from-amber-500/20 to-amber-500/5",
     iconText: "text-amber-600",
     accentBar: "from-amber-600 to-amber-400",
     ctaText: "text-amber-600",
-    borderHover: "hover:border-amber-200"
+    borderHover: "hover:border-amber-200",
+    cardBg: "bg-amber-50"
   },
   transport: {
     iconBg: "from-blue-500/20 to-blue-500/5",
     iconText: "text-blue-600",
     accentBar: "from-blue-600 to-blue-400",
     ctaText: "text-blue-600",
-    borderHover: "hover:border-blue-200"
+    borderHover: "hover:border-blue-200",
+    cardBg: "bg-blue-50"
   },
   "public-service": {
     iconBg: "from-green-500/20 to-green-500/5",
     iconText: "text-green-600",
     accentBar: "from-green-600 to-green-400",
     ctaText: "text-green-600",
-    borderHover: "hover:border-green-200"
+    borderHover: "hover:border-green-200",
+    cardBg: "bg-green-50"
   },
   security: {
     iconBg: "from-slate-600/20 to-slate-600/5",
     iconText: "text-slate-700",
     accentBar: "from-slate-700 to-slate-500",
     ctaText: "text-slate-700",
-    borderHover: "hover:border-slate-300"
+    borderHover: "hover:border-slate-300",
+    cardBg: "bg-slate-50"
   },
   assistance: {
     iconBg: "from-purple-500/20 to-purple-500/5",
     iconText: "text-purple-600",
     accentBar: "from-purple-600 to-purple-400",
     ctaText: "text-purple-600",
-    borderHover: "hover:border-purple-200"
+    borderHover: "hover:border-purple-200",
+    cardBg: "bg-purple-50"
   }
 }
 
@@ -247,7 +254,7 @@ const Home = () => (
         <StaggerContainer className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {DIAGNOSTIC_POINTS.map((point) => (
             <StaggerItem key={point}>
-              <article className="card-premium p-6">
+              <article className="card-premium bg-white p-6">
                 <div className="mb-3 h-1 w-10 rounded-full bg-gradient-to-r from-primary to-primary/40" />
                 <p className="relative z-10 text-base font-semibold leading-snug text-foreground sm:text-lg">
                   {point}
@@ -302,7 +309,7 @@ const Home = () => (
         <StaggerContainer className="mt-12 grid gap-5 md:grid-cols-3">
           {REPRESENTATION_PILLARS.map(({ icon: Icon, title }) => (
             <StaggerItem key={title}>
-              <article className="card-premium p-7">
+              <article className="card-premium bg-white p-7">
                 <div className="relative z-10 inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary/15 to-primary/5">
                   <Icon className="size-6 text-primary" />
                 </div>
@@ -472,7 +479,7 @@ const Home = () => (
               <StaggerItem key={proposal.href}>
                 <Link
                   href={proposal.href}
-                  className={`card-premium group block p-6 ${theme.borderHover}`}>
+                  className={`card-premium group block p-6 ${theme.borderHover} ${theme.cardBg}`}>
                   <div
                     className={`relative z-10 inline-flex size-12 items-center justify-center rounded-xl bg-gradient-to-br ${theme.iconBg}`}>
                     <Icon className={`size-6 ${theme.iconText}`} />

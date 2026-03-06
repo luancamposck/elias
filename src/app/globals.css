@@ -155,7 +155,6 @@
 .card-premium {
   position: relative;
   overflow: hidden;
-  background: white;
   border-radius: var(--radius-xl);
   border: 1px solid oklch(0.922 0 0);
   box-shadow: var(--shadow-card);
