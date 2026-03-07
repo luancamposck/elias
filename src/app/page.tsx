@@ -398,7 +398,7 @@ const Home = () => (
                   quem trabalha, empreende e sustenta uma família.
                 </p>
                 <p>
-                  O que acontece em Brasília chega até você — e isso exige
+                  O que acontece em Brasília chega até você, e isso exige
                   responsabilidade.
                 </p>
                 <p>

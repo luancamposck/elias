@@ -35,7 +35,7 @@ const DebureaucratizePage = () => (
 
           <div className="bg-primary/20 border border-primary/50 p-4 rounded-lg mt-4">
             <p className="font-semibold text-primary">
-              OBS: É importante se atentar para a origem do recurso — verifique
+              OBS: É importante se atentar para a origem do recurso. Verifique
               se é realmente federal.
             </p>
           </div>

@@ -84,7 +84,7 @@ const SecurityProposalPage = () => {
       </div>
 
       <StatsSection
-        title="Resultados que mostram direção — mas exigem continuidade."
+        title="Resultados que mostram direção, mas exigem continuidade."
         stats={stats}
       />
 
