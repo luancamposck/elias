@@ -324,17 +324,27 @@ const Home = () => (
     </section>
 
     {/* ── História ─────────────────────────────────────────── */}
-    <section className="relative overflow-hidden bg-warm-paper py-20 sm:py-28">
+    <section className="dot-pattern relative overflow-hidden bg-warm-paper py-20 sm:py-28">
+      {/* Soft ambient layer */}
+      <div
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_65%_55%_at_78%_45%,rgba(236,103,28,0.14),transparent)]"
+        aria-hidden="true"
+      />
+      <div
+        className="line-pattern pointer-events-none absolute inset-0 opacity-35"
+        aria-hidden="true"
+      />
+
       {/* Decorative orbs */}
       <div
         data-orb
-        className="pointer-events-none absolute -right-24 top-1/4 size-[420px] rounded-full bg-primary/40 blur-[100px]"
+        className="pointer-events-none absolute -right-24 top-1/4 size-[420px] rounded-full bg-primary/35 blur-[100px]"
         style={{ animation: "orb-float 20s ease-in-out infinite" }}
         aria-hidden="true"
       />
       <div
         data-orb
-        className="pointer-events-none absolute -left-16 bottom-1/4 size-[300px] rounded-full bg-primary/25 blur-[80px]"
+        className="pointer-events-none absolute -left-16 bottom-1/4 size-[300px] rounded-full bg-primary/20 blur-[80px]"
         style={{ animation: "orb-float-alt 25s ease-in-out infinite" }}
         aria-hidden="true"
       />
@@ -373,19 +383,75 @@ const Home = () => (
 
       <div className="container relative mx-auto px-4">
         <div className="grid items-center gap-12 md:grid-cols-12 md:gap-16">
-          <Reveal
-            direction="right"
-            className="order-first md:order-last md:col-span-5">
-            <Image
-              src="/elias-medeiros.png"
-              alt="Elias Medeiros"
-              width={400}
-              height={500}
-              className="mx-auto aspect-[4/5] w-full max-w-sm rounded-2xl object-cover shadow-[0_10px_40px_rgba(0,0,0,0.12)]"
-            />
-          </Reveal>
+          <div className="order-first relative z-20 md:order-last md:col-span-5">
+            <div className="relative mx-auto w-full max-w-[460px]">
+              <div className="absolute left-3 top-2 z-40 sm:left-4 sm:top-3 md:left-2 md:top-4">
+                <Image
+                  src="/logo-novo/logo-novo-title-orange.png"
+                  alt="Logo do partido Novo"
+                  width={428}
+                  height={291}
+                  className="h-auto w-[88px] drop-shadow-[0_10px_24px_rgba(26,38,68,0.1)] sm:w-[150px] md:w-[180px]"
+                />
+              </div>
 
-          <Reveal direction="left" className="md:col-span-7">
+              {/* Ground shadow to anchor the cutout */}
+              <div
+                className="pointer-events-none absolute inset-x-12 bottom-6 z-0 h-14 rounded-full bg-foreground/20 blur-2xl"
+                aria-hidden="true"
+              />
+              {/* Concentric square accent aligned with the other geometric elements */}
+              <div
+                className="pointer-events-none absolute -left-3 top-[58%] z-0 size-28 -translate-y-1/2 rotate-12 sm:-left-8 sm:top-1/2 sm:size-36 md:-left-12 md:size-44"
+                aria-hidden="true">
+                <div className="absolute inset-0 rounded-sm bg-primary" />
+                <div className="absolute inset-4 rounded-sm bg-warm-paper" />
+                <div className="absolute inset-10 rounded-sm bg-foreground/90" />
+                <div className="absolute inset-16 rounded-sm bg-primary/90" />
+              </div>
+              {/* Floating geometric accents around the portrait */}
+              <div
+                data-geo
+                className="pointer-events-none absolute right-2 top-6 z-30 size-10 rounded-sm bg-primary/80 shadow-[--shadow-glow] sm:size-12 md:-right-1 md:top-10 md:size-14"
+                style={{ animation: "geo-float-1 16s ease-in-out infinite" }}
+                aria-hidden="true"
+              />
+              <div
+                data-geo
+                className="pointer-events-none absolute right-[10%] top-[24%] z-20 size-8 rounded-sm bg-foreground/15"
+                style={{ animation: "geo-float-3 19s ease-in-out infinite" }}
+                aria-hidden="true"
+              />
+              <div
+                data-geo
+                className="pointer-events-none absolute left-1 bottom-[22%] z-10 size-9 bg-primary/30 sm:-left-2 sm:size-10 md:-left-5 md:bottom-[24%] md:size-12"
+                style={{
+                  clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)",
+                  animation: "geo-float-2 18s ease-in-out infinite"
+                }}
+                aria-hidden="true"
+              />
+              <div
+                data-geo
+                className="pointer-events-none absolute right-[4%] bottom-[30%] z-30 size-14 rounded-sm bg-primary/95 shadow-[--shadow-glow] sm:size-16 md:bottom-[28%] md:size-20"
+                style={{ animation: "geo-float-3 21s ease-in-out infinite" }}
+                aria-hidden="true">
+                <div className="grid h-full place-items-center">
+                  <span className="size-3 rotate-45 rounded-sm bg-white/80 sm:size-4 md:size-5" />
+                </div>
+              </div>
+
+              <Image
+                src="/elias-2.png"
+                alt="Elias Medeiros"
+                width={420}
+                height={734}
+                className="relative z-20 mx-auto h-auto w-full max-w-sm drop-shadow-[0_18px_44px_rgba(26,38,68,0.22)]"
+              />
+            </div>
+          </div>
+
+          <div className="relative z-20 md:col-span-7">
             <div className="max-w-xl">
               <h2 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
                 Por que decidi{" "}
@@ -429,7 +495,7 @@ const Home = () => (
                 </Button>
               </div>
             </div>
-          </Reveal>
+          </div>
         </div>
       </div>
     </section>
