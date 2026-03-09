@@ -1,19 +1,16 @@
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Ubuntu } from "next/font/google"
 
 import "./globals.css"
 
 import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
+import { Toaster } from "@/components/ui/sonner"
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"]
-})
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"]
+const ubuntu = Ubuntu({
+  variable: "--font-ubuntu",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700"]
 })
 
 export const metadata: Metadata = {
@@ -23,10 +20,11 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => (
   <html lang="pt-BR">
-    <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    <body className={`${ubuntu.variable} antialiased`}>
       <Header />
       {children}
       <Footer />
+      <Toaster />
     </body>
   </html>
 )
