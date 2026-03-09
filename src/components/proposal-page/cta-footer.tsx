@@ -1,5 +1,6 @@
 import Image from "next/image"
 
+import { ShareButton } from "@/components/share-button"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
@@ -29,9 +30,9 @@ export default function CTAFooter({ message, className }: CTAFooterProps) {
           </a>
         </Button>
 
-        <Button className="h-10 border bg-background border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold px-8 py-3">
+        <ShareButton className="h-10 border bg-background border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold px-8 py-3">
           Compartilhar
-        </Button>
+        </ShareButton>
       </div>
     </div>
   )

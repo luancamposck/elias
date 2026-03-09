@@ -8,6 +8,7 @@ import {
   Target
 } from "lucide-react"
 
+import { ShareButton } from "@/components/share-button"
 import { Reveal } from "@/components/motion/reveal"
 import { StaggerContainer, StaggerItem } from "@/components/motion/stagger"
 import { CTAFooter, ProposalHeader } from "@/components/proposal-page"
@@ -482,11 +483,11 @@ const AssistanceProposalPage = () => {
                   </a>
                 </Button>
 
-                <Button
+                <ShareButton
                   variant="link"
                   className="h-11 border-orange-300/70 bg-transparent px-7 font-bold text-orange-100 hover:bg-orange-500 hover:text-white">
                   COMPARTILHAR ESSA PROPOSTA
-                </Button>
+                </ShareButton>
               </div>
             </Reveal>
           </div>
