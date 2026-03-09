@@ -7,7 +7,7 @@
   },
   "files": {
     "ignoreUnknown": true,
-    "includes": ["**", "!node_modules", "!.next", "!dist", "!build"]
+    "includes": ["src/**/*.ts", "src/**/*.tsx", "!src/components/vortex.tsx", "!**/.next", "!**/dist", "!**/build", "!**/coverage", "!**/.turbo", "!**/.vercel"]
   },
   "formatter": {
     "enabled": true,
