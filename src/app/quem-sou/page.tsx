@@ -246,14 +246,19 @@ const TIMELINE_ENTRIES: TimelineEntry[] = [
     mediaLabel: "Retorno ao GDF"
   },
   {
-    year: "2017",
+    year: "2017-2026",
     title: "Novo ciclo político",
     description: [
-      "Em 2017, iniciei um novo ciclo na minha trajetória política ao me filiar ao Partido Novo.",
+      "Em 2017-2026, iniciei um novo ciclo na minha trajetória política ao me filiar ao Partido Novo.",
       "Sigo alinhado a princípios como liberdade econômica, responsabilidade fiscal, igualdade perante a lei e valorização de quem trabalha e empreende."
     ],
-    imageSrc: "/linha-do-tempo/novo-ciclo-politico.jpeg",
+    imageSrc: "/linha-do-tempo/novo-ciclo-politico/0.jpeg",
     imageAlt: "Novo ciclo político no DF",
+    images: [
+      "/linha-do-tempo/novo-ciclo-politico/0.jpeg",
+      "/linha-do-tempo/novo-ciclo-politico/1.jpeg",
+      "/linha-do-tempo/novo-ciclo-politico/2.jpeg"
+    ],
     iconName: "politics",
     tags: ["Partido Novo", "Princípios"],
     highlight:
