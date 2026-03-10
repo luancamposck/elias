@@ -39,13 +39,22 @@ export const Footer = () => (
       <div className="grid md:grid-cols-4 gap-8">
         {/* Logo and Social */}
         <div>
-          <Image
-            src="/white-logo.png"
-            alt="Medeiros Logo"
-            width={112}
-            height={112}
-            className="mb-4"
-          />
+          <div className="flex">
+            <Image
+              src="/white-logo.png"
+              alt="Medeiros Logo"
+              width={112}
+              height={112}
+              className="mb-4"
+            />
+            <Image
+              src="/logo-novo/logo-novo-text-orange.png"
+              alt="Medeiros Logo"
+              width={75}
+              height={75}
+              className="mb-4"
+            />
+          </div>
           <p className="text-gray-300">Eu por ti, nós por Brasília.</p>
           <div className="flex gap-4 mt-4">
             {socialLinks.map(({ icon: Icon, ...social }) => {
