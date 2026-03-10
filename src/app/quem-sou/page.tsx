@@ -85,7 +85,7 @@ const STORY_CARDS: StoryCard[] = [
     eyebrow: "Compromisso social",
     title: "Participação também é presença concreta nas comunidades",
     description:
-      "Sou voluntário no CEIA desde 2004, contribuindo com iniciativas voltadas à educação e ao apoio social.",
+      "Sou voluntário no CEIA - Centro de Educação Integral Amigos da Vida, desde 2004 contribuindo com iniciativas voltadas à educação e ao apoio social.",
     icon: HeartHandshake
   }
 ]
@@ -147,8 +147,9 @@ const TIMELINE_ENTRIES: TimelineEntry[] = [
       "Entre 1999 e 2006, atuei em diferentes áreas do Governo do Distrito Federal, participando de equipes responsáveis pela gestão e articulação institucional.",
       "Essa experiência me permitiu compreender de dentro como funciona a administração pública."
     ],
-    // imageAlt:
-    //   "Reunião institucional representando atuação no Governo do Distrito Federal",
+    imageSrc: "/linha-do-tempo/experiencia-no-gdf.jpeg",
+    imageAlt:
+      "Reunião com a população representando atuação no Governo do Distrito Federal",
     list: [
       "1999: Administração de Brasília",
       "2000: Subsecretaria de Juventude",
@@ -181,7 +182,7 @@ const TIMELINE_ENTRIES: TimelineEntry[] = [
     year: "2004",
     title: "Trabalho voluntário na educação",
     description: [
-      "Desde 2004, atuo como voluntário no CEIA, contribuindo com iniciativas voltadas à educação e ao apoio social.",
+      "Desde 2004, atuo como voluntário no CEIA - Centro de Educação Integral Amigos da Vida, contribuindo com iniciativas voltadas à educação e ao apoio social.",
       "Esse trabalho reforçou meu compromisso com oportunidades reais para quem mais precisa."
     ],
     iconName: "social",
