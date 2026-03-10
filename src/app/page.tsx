@@ -139,7 +139,7 @@ const Home = () => (
       />
       <div
         data-orb
-        className="pointer-events-none absolute -left-20 bottom-1/4 size-[300px] rounded-full bg-primary/30 blur-[80px]"
+        className="pointer-events-none absolute -left-20 bottom-1/4 size-[300px] rounded-full bg-brazil-green/25 blur-[80px]"
         style={{ animation: "orb-float-alt 25s ease-in-out infinite" }}
         aria-hidden="true"
       />
@@ -215,6 +215,11 @@ const Home = () => (
           </HeroItem>
         </div>
       </HeroReveal>
+
+      <div
+        className="absolute bottom-0 left-0 z-10 h-1 w-full bg-gradient-to-r from-brazil-green via-brazil-yellow to-brazil-green"
+        aria-hidden="true"
+      />
     </section>
 
     {/* ── Diagnóstico ──────────────────────────────────────── */}
@@ -275,17 +280,20 @@ const Home = () => (
       />
       <div className="container relative mx-auto px-4">
         <Reveal>
-          <div className="accent-bar mx-auto max-w-4xl rounded-2xl border border-gray-100 bg-white p-8 pl-10 shadow-sm sm:p-12 sm:pl-14">
+          <div className="accent-bar-green mx-auto max-w-4xl rounded-2xl border border-gray-100 bg-white p-8 pl-10 shadow-sm sm:p-12 sm:pl-14">
             <h2 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
               Não é ataque pessoal.{" "}
-              <span className="text-primary">É escolha de visão de país.</span>
+              <span className="text-brazil-yellow">
+                É escolha de visão de país.
+              </span>
             </h2>
             <p className="mt-5 text-base leading-relaxed text-foreground/65 sm:text-lg">
               Você prefere um deputado que expande o Estado ou que cobra
               resultado?
             </p>
             <p className="mt-2 text-base font-semibold text-foreground sm:text-lg">
-              A diferença não está no discurso. Está no voto.
+              A diferença não está no discurso de candidato. Está no voto do
+              parlamentar.
             </p>
           </div>
         </Reveal>

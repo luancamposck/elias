@@ -675,13 +675,19 @@ const QuemSouPage = () => (
     <section className="relative overflow-hidden bg-[#10192d] py-20 text-white sm:py-24">
       <div
         data-orb
-        className="pointer-events-none absolute left-1/2 top-1/2 size-[340px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/20 blur-[120px]"
+        className="pointer-events-none absolute left-[40%] top-1/2 size-[280px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brazil-green/15 blur-[120px]"
         style={{ animation: "orb-float-alt 22s ease-in-out infinite" }}
         aria-hidden="true"
       />
       <div
+        data-orb
+        className="pointer-events-none absolute left-[60%] top-1/2 size-[260px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brazil-yellow/12 blur-[120px]"
+        style={{ animation: "orb-float 20s ease-in-out infinite" }}
+        aria-hidden="true"
+      />
+      <div
         data-geo
-        className="pointer-events-none absolute left-[12%] top-[24%] size-12 rounded-sm bg-primary/14"
+        className="pointer-events-none absolute left-[12%] top-[24%] size-12 rounded-sm bg-brazil-green/14"
         style={{ animation: "geo-float-1 18s ease-in-out infinite" }}
         aria-hidden="true"
       />
@@ -709,6 +715,10 @@ const QuemSouPage = () => (
             Boa política melhora{" "}
             <span className="text-primary">tudo ao redor.</span>
           </h2>
+          <div
+            className="mx-auto mt-4 h-0.5 w-24 rounded-full bg-gradient-to-r from-brazil-green via-brazil-yellow to-brazil-green"
+            aria-hidden="true"
+          />
           <div className="mt-8 space-y-3 text-lg leading-relaxed text-white/74 sm:text-xl">
             <p>Não se trata de discurso.</p>
             <p>Se trata de responsabilidade.</p>
@@ -719,6 +729,12 @@ const QuemSouPage = () => (
         </Reveal>
       </div>
     </section>
+
+    <div className="py-16 bg-white">
+      <div className="container mx-auto px-4">
+        <CTAFooter message="Conheça minha trajetória e faça parte dessa construção." />
+      </div>
+    </div>
   </>
 )
 

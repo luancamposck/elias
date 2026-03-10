@@ -11,7 +11,15 @@ interface CTAFooterProps {
 
 export default function CTAFooter({ message, className }: CTAFooterProps) {
   return (
-    <div className={cn("bg-blue-900 text-white p-8 rounded-lg", className)}>
+    <div className={cn("relative overflow-hidden bg-blue-900 text-white p-8 rounded-lg", className)}>
+      <div
+        className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-brazil-green via-brazil-yellow to-brazil-green"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute -right-20 -top-20 size-[200px] rounded-full bg-brazil-green/[0.08] blur-[80px]"
+        aria-hidden="true"
+      />
       <div className="mx-auto w-[150px] h-[50px] relative">
         <Image
           src="/white-logo.png"
