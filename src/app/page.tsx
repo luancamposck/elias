@@ -280,18 +280,18 @@ const Home = () => (
       />
       <div className="container relative mx-auto px-4">
         <Reveal>
-          <div className="accent-bar-green mx-auto max-w-4xl rounded-2xl border border-gray-100 bg-white p-8 pl-10 shadow-sm sm:p-12 sm:pl-14">
-            <h2 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
+          <div className="mx-auto max-w-4xl rounded-2xl border border-white/10 bg-foreground p-8 pl-10 shadow-sm sm:p-12 sm:pl-14 border-l-6 border-l-brazil-green">
+            <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
               Não é ataque pessoal.{" "}
               <span className="text-brazil-yellow">
                 É escolha de visão de país.
               </span>
             </h2>
-            <p className="mt-5 text-base leading-relaxed text-foreground/65 sm:text-lg">
+            <p className="mt-5 text-base leading-relaxed text-white/70 sm:text-lg">
               Você prefere um deputado que expande o Estado ou que cobra
               resultado?
             </p>
-            <p className="mt-2 text-base font-semibold text-foreground sm:text-lg">
+            <p className="mt-2 text-base font-semibold text-white sm:text-lg underline decoration-2 decoration-brazil-yellow">
               A diferença não está no discurso de candidato. Está no voto do
               parlamentar.
             </p>
