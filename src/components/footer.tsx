@@ -42,12 +42,14 @@ export const Footer = () => (
           <Image
             src="/white-logo.png"
             alt="Medeiros Logo"
-            width={112}
-            height={112}
-            className="mb-4"
+            width={224}
+            height={224}
+            className="mb-4 w-full mx-auto md:mx-0"
           />
-          <p className="text-gray-300">Eu por ti, nós por Brasília.</p>
-          <div className="flex gap-4 mt-4">
+          <p className="text-gray-300 text-center md:text-left">
+            Eu por ti, nós por Brasília.
+          </p>
+          <div className="flex justify-center md:justify-start gap-4 mt-4">
             {socialLinks.map(({ icon: Icon, ...social }) => {
               return (
                 <Link
