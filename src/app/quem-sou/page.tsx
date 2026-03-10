@@ -170,8 +170,18 @@ const TIMELINE_ENTRIES: TimelineEntry[] = [
       "Iniciei minha jornada como empreendedor com a criação da Massimo Participações, atuando nas áreas de tecnologia, software, publicidade e comunicação.",
       "Empreender reforçou uma convicção simples: resultado não aparece por acaso."
     ],
-    imageSrc: "/linha-do-tempo/empreendedor-e-desenvolvedor.jpeg",
+    imageSrc: "/linha-do-tempo/empreendedorismo/1.jpeg",
     imageAlt: "Elias Medeiros em ambiente de empreendedorismo e tecnologia",
+    images: [
+      "/linha-do-tempo/empreendedorismo/1.jpeg",
+      "/linha-do-tempo/empreendedorismo/2.jpeg",
+      "/linha-do-tempo/empreendedorismo/3.jpeg",
+      "/linha-do-tempo/empreendedorismo/4.jpeg",
+      "/linha-do-tempo/empreendedorismo/5.jpeg",
+      "/linha-do-tempo/empreendedorismo/6.jpeg",
+      "/linha-do-tempo/empreendedorismo/7.jpeg",
+      "/linha-do-tempo/empreendedorismo/8.jpeg"
+    ],
     iconName: "business",
     tags: ["Tecnologia", "Empreendedorismo"],
     highlight:
