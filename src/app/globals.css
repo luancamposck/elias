@@ -42,6 +42,8 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --color-warm-paper: var(--warm-paper);
+  --color-brazil-green: var(--brazil-green);
+  --color-brazil-yellow: var(--brazil-yellow);
 }
 
 :root {
@@ -77,6 +79,10 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* ── Brazil flag tokens ── */
+  --brazil-green: #009C3B;
+  --brazil-yellow: #FFDF00;
 
   /* ── Ink & Ember tokens ── */
   --warm-paper: #fdf8f4;
@@ -287,6 +293,21 @@
   width: 4px;
   border-radius: 2px;
   background: linear-gradient(180deg, #EC671C 0%, rgba(236, 103, 28, 0.3) 100%);
+}
+
+.accent-bar-green {
+  position: relative;
+}
+
+.accent-bar-green::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #009C3B 0%, rgba(0, 156, 59, 0.3) 100%);
 }
 
 /* ── Accessibility: respect prefers-reduced-motion ── */
