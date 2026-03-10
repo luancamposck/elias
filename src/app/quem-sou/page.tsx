@@ -4,20 +4,20 @@ import {
   Building2,
   Globe2,
   HeartHandshake,
+  type LucideIcon,
   MapPin,
-  Users,
-  type LucideIcon
+  Users
 } from "lucide-react"
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
-
-import {
-  TimelineShowcase,
-  type TimelineEntry
-} from "@/components/quem-sou/timeline-showcase"
 import { Reveal } from "@/components/motion/reveal"
 import { StaggerContainer, StaggerItem } from "@/components/motion/stagger"
+import CTAFooter from "@/components/proposal-page/cta-footer"
+import {
+  type TimelineEntry,
+  TimelineShowcase
+} from "@/components/quem-sou/timeline-showcase"
 import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
@@ -113,8 +113,6 @@ const TIMELINE_ENTRIES: TimelineEntry[] = [
       "Aos 17 anos, participei da campanha que ajudou a eleger o primeiro deputado distrital eleito pela comunidade de Samambaia.",
       "Foi meu primeiro contato direto com o processo democrático e com o funcionamento das campanhas políticas."
     ],
-    imageSrc: "/linha-do-tempo/reuniao-politica.jpeg",
-    imageAlt: "Ambiente institucional representando a primeira participação política",
     iconName: "politics",
     tags: ["Campanha", "Participação"],
     highlight:
@@ -127,10 +125,20 @@ const TIMELINE_ENTRIES: TimelineEntry[] = [
       "Aos 21 anos, fui candidato a Deputado Distrital, participando do debate público e apresentando ideias para o futuro do Distrito Federal.",
       "Essa experiência marcou o início da minha trajetória eleitoral."
     ],
+    imageSrc: "/linha-do-tempo/primeira-candidatura/1.jpeg",
+    imageAlt: "Primeira candidatura de Elias Medeiros a Deputado Distrital",
+    images: [
+      "/linha-do-tempo/primeira-candidatura/1.jpeg",
+      "/linha-do-tempo/primeira-candidatura/2.jpeg",
+      "/linha-do-tempo/primeira-candidatura/3.jpeg",
+      "/linha-do-tempo/primeira-candidatura/4.jpeg",
+      "/linha-do-tempo/primeira-candidatura/5.jpeg"
+    ],
     iconName: "candidacy",
     tags: ["Debate público", "Candidatura"],
     highlight:
-      "A candidatura consolidou uma convicção: participar também significa se colocar à prova diante da sociedade."
+      "A candidatura consolidou uma convicção: participar também significa se colocar à prova diante da sociedade.",
+    mediaLabel: "1998"
   },
   {
     year: "1999-2006",
@@ -139,8 +147,8 @@ const TIMELINE_ENTRIES: TimelineEntry[] = [
       "Entre 1999 e 2006, atuei em diferentes áreas do Governo do Distrito Federal, participando de equipes responsáveis pela gestão e articulação institucional.",
       "Essa experiência me permitiu compreender de dentro como funciona a administração pública."
     ],
-    imageSrc: "/linha-do-tempo/reuniao-politica.jpeg",
-    imageAlt: "Reunião institucional representando atuação no Governo do Distrito Federal",
+    // imageAlt:
+    //   "Reunião institucional representando atuação no Governo do Distrito Federal",
     list: [
       "1999: Administração de Brasília",
       "2000: Subsecretaria de Juventude",
@@ -188,8 +196,8 @@ const TIMELINE_ENTRIES: TimelineEntry[] = [
       "Vivi em Madrid, na Espanha, onde empreendi na área de tecnologia e comunicação e atuei como editor de revista voltada à comunidade brasileira na Europa.",
       "Foi também nesse período que construí minha família e ampliei minha visão sobre gestão pública, inovação e liberdade econômica."
     ],
-    imageSrc: "/linha-do-tempo/emabixador-eslovenia.jpeg",
-    imageAlt: "Encontro internacional representando a fase em Madrid",
+    imageSrc: "/linha-do-tempo/madrid.jpeg",
+    imageAlt: "Encontro representando a fase em Madrid",
     iconName: "global",
     tags: ["Madrid", "Europa", "Comunicação"],
     highlight:
@@ -204,8 +212,17 @@ const TIMELINE_ENTRIES: TimelineEntry[] = [
       "Em 2015, voltei a colaborar com o Governo do Distrito Federal, atuando em áreas estratégicas da administração pública.",
       "Essa experiência ampliou minha visão sobre gestão pública e articulação institucional."
     ],
-    imageSrc: "/linha-do-tempo/reuniao-politica.jpeg",
+    imageSrc: "/linha-do-tempo/retorno-ao-gdf/0.jpeg",
     imageAlt: "Reunião institucional representando o retorno ao Governo do DF",
+    images: [
+      "/linha-do-tempo/retorno-ao-gdf/0.jpeg",
+      "/linha-do-tempo/retorno-ao-gdf/1.jpeg",
+      "/linha-do-tempo/retorno-ao-gdf/2.jpeg",
+      "/linha-do-tempo/retorno-ao-gdf/3.jpeg",
+      "/linha-do-tempo/retorno-ao-gdf/4.jpeg",
+      "/linha-do-tempo/retorno-ao-gdf/5.jpeg",
+      "/linha-do-tempo/retorno-ao-gdf/6.jpeg"
+    ],
     list: [
       "Secretaria de Relações Institucionais",
       "Casa Civil",
@@ -224,6 +241,8 @@ const TIMELINE_ENTRIES: TimelineEntry[] = [
       "Em 2017, iniciei um novo ciclo na minha trajetória política ao me filiar ao Partido Novo.",
       "Sigo alinhado a princípios como liberdade econômica, responsabilidade fiscal, igualdade perante a lei e valorização de quem trabalha e empreende."
     ],
+    imageSrc: "/linha-do-tempo/novo-ciclo-politico.jpeg",
+    imageAlt: "Novo ciclo político no DF",
     iconName: "politics",
     tags: ["Partido Novo", "Princípios"],
     highlight:
@@ -238,7 +257,8 @@ const TIMELINE_ENTRIES: TimelineEntry[] = [
       "Sigo ligado às comunidades que fazem parte da minha história, especialmente Samambaia e Águas Lindas de Goiás."
     ],
     imageSrc: "/linha-do-tempo/empreendedor-e-desenvolvedor.jpeg",
-    imageAlt: "Elias Medeiros em ambiente de trabalho representando a atuação atual",
+    imageAlt:
+      "Elias Medeiros em ambiente de trabalho representando a atuação atual",
     iconName: "current",
     tags: ["Tecnologia", "Participação cidadã", "Comunidade"],
     highlight:
@@ -427,8 +447,7 @@ const QuemSouPage = () => (
                 data-geo
                 className="absolute right-4 top-6 z-30 size-14 rounded-sm bg-primary shadow-[--shadow-glow] sm:size-16"
                 style={{ animation: "geo-float-3 19s ease-in-out infinite" }}
-                aria-hidden="true"
-              >
+                aria-hidden="true">
                 <div className="grid h-full place-items-center">
                   <span className="size-4 rotate-45 rounded-sm bg-white/85 sm:size-5" />
                 </div>
@@ -500,8 +519,8 @@ const QuemSouPage = () => (
               </p>
               <p>
                 Minha história está profundamente ligada a Brasília. Vivo em
-                Samambaia desde 1990 e continuo acompanhando de perto os desafios
-                e as oportunidades da nossa região.
+                Samambaia desde 1990 e continuo acompanhando de perto os
+                desafios e as oportunidades da nossa região.
               </p>
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -509,7 +528,9 @@ const QuemSouPage = () => (
                 asChild
                 className="bg-primary text-white hover:bg-primary/90"
                 size="lg">
-                <Link href="/propostas/seguranca">Conheça minhas propostas</Link>
+                <Link href="/propostas/seguranca">
+                  Conheça minhas propostas
+                </Link>
               </Button>
               <Button
                 asChild

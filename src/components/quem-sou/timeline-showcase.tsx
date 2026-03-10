@@ -14,6 +14,8 @@ import {
 import { motion } from "motion/react"
 import Image from "next/image"
 
+import { TimelineCarousel } from "@/components/quem-sou/timeline-carousel"
+
 import { cn } from "@/lib/utils"
 
 type TimelineIconName =
@@ -36,6 +38,7 @@ export type TimelineEntry = {
   iconName: TimelineIconName
   tags?: string[]
   highlight?: string
+  images?: string[]
   mediaLabel?: string
   variant?: "light" | "dark"
 }
@@ -182,12 +185,19 @@ function TimelineVisual({
       )}
     >
       <div className="relative aspect-[16/10] overflow-hidden rounded-[1.3rem] bg-[#efe7e0]">
-        <Image
-          src={entry.imageSrc}
-          alt={entry.imageAlt ?? entry.title}
-          fill
-          className="object-cover"
-        />
+        {entry.images && entry.images.length > 1 ? (
+          <TimelineCarousel
+            images={entry.images}
+            alt={entry.imageAlt ?? entry.title}
+          />
+        ) : (
+          <Image
+            src={entry.imageSrc}
+            alt={entry.imageAlt ?? entry.title}
+            fill
+            className="object-cover"
+          />
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-[#1A2644]/28 via-transparent to-white/8" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(236,103,28,0.16),transparent_34%)]" />
 
