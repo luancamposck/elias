@@ -61,7 +61,7 @@ const STORY_CARDS: StoryCard[] = [
     description:
       "Passei por diferentes áreas do Governo do Distrito Federal e entendi onde a gestão precisa melhorar para servir melhor as pessoas.",
     icon: Building2,
-    imageSrc: "/linha-do-tempo/reuniao-politica.jpeg",
+    imageSrc: "/linha-do-tempo/retorno-ao-gdf/0.jpeg",
     imageAlt: "Reunião institucional no Governo do Distrito Federal",
     list: [
       "Administração de Brasília",
@@ -78,7 +78,7 @@ const STORY_CARDS: StoryCard[] = [
     description:
       "Entre 2007 e 2014 vivi em Madrid, empreendi na área de tecnologia e comunicação e atuei em projetos voltados à comunidade brasileira na Europa.",
     icon: Globe2,
-    imageSrc: "/linha-do-tempo/emabixador-eslovenia.jpeg",
+    imageSrc: "/linha-do-tempo/madrid.jpeg",
     imageAlt: "Elias Medeiros em encontro internacional"
   },
   {
