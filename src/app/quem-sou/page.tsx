@@ -85,7 +85,7 @@ const STORY_CARDS: StoryCard[] = [
     eyebrow: "Compromisso social",
     title: "Participação também é presença concreta nas comunidades",
     description:
-      "Sou voluntário no CEIA - Centro de Educação Integral Amigos da Vida, desde 2004 contribuindo com iniciativas voltadas à educação e ao apoio social.",
+      "Sou fundador do Instituto Iracema Medeiros que atua desde 1992 em Samambaia e voluntário no CEIA - Centro de Educação Integral Amigos da Vida, desde 2004 contribuindo com iniciativas voltadas à educação, cultura, esporte e ao apoio social.",
     icon: HeartHandshake,
     imageSrc: "/linha-do-tempo/1992/5.jpeg",
     imageAlt:
