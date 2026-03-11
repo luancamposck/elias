@@ -86,7 +86,10 @@ const STORY_CARDS: StoryCard[] = [
     title: "Participação também é presença concreta nas comunidades",
     description:
       "Sou voluntário no CEIA - Centro de Educação Integral Amigos da Vida, desde 2004 contribuindo com iniciativas voltadas à educação e ao apoio social.",
-    icon: HeartHandshake
+    icon: HeartHandshake,
+    imageSrc: "/linha-do-tempo/1992/5.jpeg",
+    imageAlt:
+      "Elias Medeiros voluntário do CEIA - Centro de Educação Integral Amigos da Vida"
   }
 ]
 
