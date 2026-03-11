@@ -52,7 +52,7 @@ const STORY_CARDS: StoryCard[] = [
     description:
       "Em janeiro de 2000, fundei a Massimo Participações, atuando em tecnologia, software, publicidade e marketing empresarial.",
     icon: BriefcaseBusiness,
-    imageSrc: "/linha-do-tempo/empreendedor-e-desenvolvedor.jpeg",
+    imageSrc: "/linha-do-tempo/empreendedorismo/2.jpeg",
     imageAlt: "Elias Medeiros em ambiente de trabalho"
   },
   {
@@ -195,10 +195,19 @@ const TIMELINE_ENTRIES: TimelineEntry[] = [
       "Desde 2004, atuo como voluntário no CEIA - Centro de Educação Integral Amigos da Vida, contribuindo com iniciativas voltadas à educação e ao apoio social.",
       "Esse trabalho reforçou meu compromisso com oportunidades reais para quem mais precisa."
     ],
+    imageSrc: "/linha-do-tempo/2004/1.jpeg",
+    imageAlt: "Trabalho voluntário no CEIA",
+    images: [
+      "/linha-do-tempo/2004/1.jpeg",
+      "/linha-do-tempo/2004/2.jpeg",
+      "/linha-do-tempo/2004/3.jpeg",
+      "/linha-do-tempo/2004/4.jpeg"
+    ],
     iconName: "social",
     tags: ["CEIA", "Educação", "Apoio social"],
     highlight:
-      "Participação política sem compromisso social vira abstração. O voluntariado mantém essa conexão com a realidade."
+      "Participação política sem compromisso social vira abstração. O voluntariado mantém essa conexão com a realidade.",
+    mediaLabel: "2004"
   },
   {
     year: "2007-2014",
@@ -269,7 +278,7 @@ const TIMELINE_ENTRIES: TimelineEntry[] = [
     year: "Hoje",
     title: "Participação e construção",
     description: [
-      "Hoje continuo atuando com tecnologia, comunicação e projetos que incentivam a participação cidadã.",
+      "Hoje continuo atuando com tecnologia, comunicação e projetos que incentivam a participação cidadã. Sou pré-candidato a deputado federal pelo partido Novo.",
       "Sigo ligado às comunidades que fazem parte da minha história, especialmente Samambaia e Águas Lindas de Goiás."
     ],
     imageSrc: "/linha-do-tempo/empreendedor-e-desenvolvedor.jpeg",
