@@ -42,9 +42,9 @@ export const Footer = () => (
           <Image
             src="/white-logo.png"
             alt="Medeiros Logo"
-            width={224}
-            height={224}
-            className="mb-4 w-full mx-auto md:mx-0"
+            width={150}
+            height={150}
+            className="mb-4 w-3/5 mx-auto md:mx-0"
           />
           <p className="text-gray-300 text-center md:text-left">
             Eu por ti, nós por Brasília.
