@@ -258,7 +258,7 @@ const TIMELINE_ENTRIES: TimelineEntry[] = [
     year: "2017-2026",
     title: "Novo ciclo político",
     description: [
-      "Em 2017-2026, iniciei um novo ciclo na minha trajetória política ao me filiar ao Partido Novo.",
+      "Em 2017, iniciei um novo ciclo na minha trajetória política ao me filiar ao Partido Novo.",
       "Sigo alinhado a princípios como liberdade econômica, responsabilidade fiscal, igualdade perante a lei e valorização de quem trabalha e empreende."
     ],
     imageSrc: "/linha-do-tempo/novo-ciclo-politico/0.jpeg",
