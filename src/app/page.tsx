@@ -1,5 +1,4 @@
 import { ArrowRight, BarChart3, FileSearch2, Scale } from "lucide-react"
-import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -8,12 +7,6 @@ import { Reveal } from "@/components/motion/reveal"
 import { StaggerContainer, StaggerItem } from "@/components/motion/stagger"
 import { Button } from "@/components/ui/button"
 import { PROPOSALS } from "@/lib/constants"
-
-export const metadata: Metadata = {
-  title: "Elias Medeiros | Boa política melhora tudo ao redor",
-  description:
-    "Diagnóstico claro, visão de país e participação ativa para destravar Brasília com responsabilidade."
-}
 
 const DIAGNOSTIC_POINTS = [
   "Imposto alto é escolha política.",
