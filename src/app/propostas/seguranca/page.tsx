@@ -125,6 +125,25 @@ const SecurityProposalPage = () => {
               <Shield className="absolute -right-10 -bottom-10 size-48 text-white/5 rotate-12" />
             </div>
 
+            <div className="mb-16 rounded-2xl border border-gray-200 border-l-4 border-l-orange-500 bg-gray-50 p-8 shadow-sm">
+              <div className="max-w-3xl">
+                <p className="text-lg font-medium leading-relaxed text-gray-900">
+                  O Distrito Federal já está acima da média nacional em número
+                  de policiais por habitante.
+                </p>
+                <p className="mt-4 text-lg leading-relaxed text-gray-700">
+                  Reforços como esse ajudam e aumentam a presença nas ruas.
+                </p>
+                <p className="mt-4 text-xl font-semibold leading-relaxed text-gray-900">
+                  Mas mais presença não substitui estratégia.
+                </p>
+                <p className="mt-4 text-lg leading-relaxed text-gray-700">
+                  Segurança pública exige gestão, inteligência e uso eficiente
+                  do efetivo.
+                </p>
+              </div>
+            </div>
+
             <h2 className="text-3xl font-bold mb-10 text-gray-900">
               Ação: O Plano de Proteção e Ordem
             </h2>

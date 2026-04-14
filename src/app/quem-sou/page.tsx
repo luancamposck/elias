@@ -536,7 +536,7 @@ const QuemSouPage = () => (
             </h2>
             <div className="mt-6 space-y-4 text-lg leading-relaxed text-foreground/68">
               <p>
-                Meu nome é Elias Medeiros. Tenho 48 anos e construí minha
+                Nascido em Brasília. Meu nome é Elias Medeiros. Tenho 48 anos e construí minha
                 trajetória entre empreendedorismo, tecnologia, comunicação e
                 serviço público.
               </p>
